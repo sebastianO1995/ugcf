@@ -1,10 +1,10 @@
 <template lang="html">
   <header class="navHeader">
-      <div :class="[overlay,'logo',ovNav]" >
+      <div :class="['logo',ovNav]" >
         <router-link :to="{ name: 'Home' }">
           <img id="myLogo" src="@/assets/logo.png" /></router-link>
       </div>
-      <nav style="width:88%;" :class="[overlay, 'topNav']" v-if="notSmall==true">
+      <nav style="width:88%;" :class="['topNav']" v-if="notSmall==true">
           <ul>
             <li v-for="item in menuItems" :key="item.name">
               <div v-if="item.hasSub === true">
@@ -40,8 +40,9 @@
     <span class="hamburger">
         <i class="fas fa-bars" v-on:click="openNav()"></i>
     </span>
+    <v-slide-x-reverse-transition>
     <div id="sideNav"  class="mySideNav" ref="icon" v-show="showSide"  >
-      <a href="javascript:void(0)" class="closebtn" v-on:click="closeNav()">&times;</a>
+      <a class="closebtn" v-on:click="closeNav()">&times;</a>
       <ul>
         <li v-for="item in menuItems" :key="item.name" >
           <div v-if="item.hasSub" class="drop-text navList sideList">
@@ -63,6 +64,7 @@
         </li>
       </ul>
     </div>
+    </v-slide-x-reverse-transition>
   </div>
   </header>
 </template>
@@ -97,7 +99,7 @@ export default {
             {
               text: 'Meet the Team',
               link: '/team',
-            }
+            },
           ],
         },
         {
@@ -216,14 +218,15 @@ export default {
 }
 .mySideNav{
   height: 100%; /* 100% Full-height */
-  padding:10px;
   font-size:35px;
   text-align:left;
-  width:230px;
+  width:300px;
   position: fixed; /* Stay in place */
   z-index: 5; /* Stay on top */
   top: 0; /* Stay at the top */
   right: 0;
+  left:auto;
+  max-width:100%;
   background-color: rgba(0, 0, 0, 0.9);; /* Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 60px; /* Place content 60px from the top */
@@ -234,9 +237,9 @@ export default {
   color:#ddc;
   text-decoration: none;
   top: 0;
-  right: 200px;
+  left: 2%;
   font-size: 36px;
-  margin-left: 50px;
+  max-width:100%;
 }
 
 .closebtn:hover{

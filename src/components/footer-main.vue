@@ -1,50 +1,31 @@
-<template>
-  <v-footer
-    dark
-    height="auto"
-    absolute
-    style="z-index:1 !important"
-  >
-    <v-card
-      class="flex"
-      flat
-      tile
-    >
-      <v-card-title class="teal">
-        <strong class="subheading">Get connected with us on social networks!</strong>
-
-        <v-spacer></v-spacer>
-
-        <v-btn
-          v-for="icon in icons"
-          :key="icon"
-          class="mx-3"
-          dark
-          icon
-        >
-          <v-icon size="24px">{{ icon }}</v-icon>
+<template lang="html">
+  <v-footer color= "primary" height= "auto" app style="z-index:0 !important" >
+  <v-layout justify center row wrap>
+      <v-flex>
+        <v-btn v-for= "item in footerItems" :key= "item.icon"
+          class="mx-3" dark icon>
+            <v-icon size= "24px">{{item.icon}}</v-icon>
         </v-btn>
-      </v-card-title>
-
-      <v-card-actions class="grey darken-3 justify-center">
-        &copy;2018 — <strong>Vuetify</strong>
-      </v-card-actions>
-    </v-card>
-  </v-footer>
+      </v-flex>
+      <v-flex py-3 white--text xs12 class= "grey darken-3">
+        <span class="white--text" >&copy; 2018</span>
+      </v-flex>
+  </v-layout>
+</v-footer>
 </template>
 
 <script>
-  export default {
-    data: () => ({
-      icons: [
-        'fab fa-facebook',
-        'fab fa-twitter',
-        'fab fa-google-plus',
-        'fab fa-linkedin',
-        'fab fa-instagram',
+export default {
+  data() {
+    return {
+      footerItems: [
+        {icon: 'fab fa-facebook'},
+        {icon: 'fab fa-twitter'},
+        {icon: 'fab fa-instagram'}
       ]
-    }),
-  };
+    }
+  }
+}
 </script>
 
 <style lang="css" scoped>

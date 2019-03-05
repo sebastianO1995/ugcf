@@ -5,38 +5,35 @@
         <div class="display-3 center main">
           Unified Global Connections
         </div>
-        <div class="display-1 center subMain">
+        <!-- <div class="display-1 center subMain">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-        </div>
+        </div> -->
       </v-container>
 
-      <div class="content">
+      <div class="content-body">
         <v-layout row wrap>
           <v-flex xs12>
-            <v-card id="our-mission" class="mission">
+            <v-card flat id="our-mission" class="mission">
               <v-container>
-                <div class="headline center">
-                  Our Mission
+                <div class="display-2 center underTitle">
+                  ~ Our Mission ~
                 </div>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                <div class="center mt-4 headline">
+                  To build meaningful connections between people of different cultures in order to nurture compassionate and accepting communities across the world.
 
+                </div>
               </v-container>
             </v-card>
 
-            <v-card id="our-vision" class="vision mt-3">
+            <v-card flat id="our-vision" class="vision mt-3">
               <v-container>
-                <div class="headline center">
-                  Our Vision
+                <div class="display-2 center underTitle">
+                  ~ Our Vision ~
                 </div>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                <div class="center mt-4 headline">
+                  To become a community development network that transcends cultural and geographical boundaries, cultivating a united global community.
 
+                </div>
               </v-container>
             </v-card>
           </v-flex>
@@ -44,9 +41,8 @@
 
 
       </div>
+
     </header>
-
-
 
 
   </div>
@@ -73,10 +69,18 @@ header{
 margin-top:20px;
 
 }
-.content{
+.content-body{
   position:absolute;
-  left:10%;
-  right:10%;
-  bottom:-40%;
+  left:20%;
+  right:20%;
+  top:80%;
+}
+.underTitle:after{
+  content:'';
+  display:block;
+  margin: 0 auto;
+  width:40%;
+  padding-top:5px;
+  border-bottom: 1px solid black;
 }
 </style>

@@ -1,17 +1,21 @@
 <template>
   <v-app id="app">
-    <nav-drawer :overlay = "overlay" :ovNav = "ovNav"
+    <div :class="{overlay}">
+    <nav-drawer  :ovNav = "ovNav"
       @closedDrawer = 'updateDrawerClass($event)'
       @openedDrawer= 'updateDrawerClass($event)'></nav-drawer>
 
-      <div :class="{overlay}">
-        <section class="content">
-          <router-view/>
-        </section>
+
+        <v-content class="content">
+        <router-view></router-view>
+
+        </v-content>
+
+
       </div>
 
 
-    <main-footer :class="{overlay}"></main-footer>
+
 
 
   </v-app>
@@ -68,16 +72,23 @@ export default {
   background-color: #212121;
   height:100%;
   width:100%;
-  position:absolute;
+  position:fixed;
   opacity:.46;
   z-index:1;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  pointer-events: auto;
+    touch-action: none;
 }
 .ovNav:before{
   content:'';
   height:86% !important;
 }
 .content{
-  margin-top:30px
+  margin-top:78px;
+
 }
 
 .header-main{
