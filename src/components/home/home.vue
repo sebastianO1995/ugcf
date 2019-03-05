@@ -10,10 +10,11 @@
         </div> -->
       </v-container>
 
-      <div class="content-body">
+      <div :class="[{'content-body small': $vuetify.breakpoint.smAndDown},
+        {'content-body': $vuetify.breakpoint.mdAndUp}]">
         <v-layout row wrap>
           <v-flex xs12>
-            <v-card flat id="our-mission" class="mission">
+            <v-card id="our-mission" class="mission">
               <v-container>
                 <div class="display-2 center underTitle">
                   ~ Our Mission ~
@@ -25,7 +26,7 @@
               </v-container>
             </v-card>
 
-            <v-card flat id="our-vision" class="vision mt-3">
+            <v-card id="our-vision" class="vision mt-3">
               <v-container>
                 <div class="display-2 center underTitle">
                   ~ Our Vision ~
@@ -74,6 +75,10 @@ margin-top:20px;
   left:20%;
   right:20%;
   top:80%;
+}
+.small{
+  left:0;
+  right:0;
 }
 .underTitle:after{
   content:'';

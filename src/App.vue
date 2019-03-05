@@ -60,6 +60,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
 
 }
+body{
+  background-color: #fbfbfb;
+}
 *{
   margin:0;
 }
@@ -92,7 +95,7 @@ export default {
 }
 
 .header-main{
-  height:40vh;
+  height:60vh;
   background-size: cover;
   background-repeat: no-repeat;
   background-position:center;
