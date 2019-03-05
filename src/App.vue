@@ -4,20 +4,10 @@
     <nav-drawer  :ovNav = "ovNav"
       @closedDrawer = 'updateDrawerClass($event)'
       @openedDrawer= 'updateDrawerClass($event)'></nav-drawer>
-
-
         <v-content class="content">
         <router-view></router-view>
-
         </v-content>
-
-
       </div>
-
-
-
-
-
   </v-app>
 </template>
 
@@ -91,16 +81,46 @@ body{
 }
 .content{
   margin-top:78px;
+  margin-bottom:5rem;
 
 }
-
-.header-main{
+/*HEADERS*/
+.hm-height{
   height:60vh;
+}
+.header-main{
+
   background-size: cover;
   background-repeat: no-repeat;
   background-position:center;
   color:white;
   position:relative;
 }
+.main-title{
+margin-top:5rem;
 
+}
+/*main-card*/
+
+.card-content{
+  position:relative;
+  max-width: 86.25rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.main-card{
+    padding: 30px 0 40px 0;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+.ontop{
+  top: -80px;
+}
+@media only screen and (max-width:600px) {
+
+  .hm-height{
+    height:50vh;
+  }
+}
 </style>

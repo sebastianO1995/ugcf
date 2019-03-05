@@ -1,6 +1,6 @@
 <template lang="html">
   <div>
-  <header class="header-main">
+  <header class="hm-height header-main">
 
   </header>
   </div>

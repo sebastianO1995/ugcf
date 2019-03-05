@@ -1,49 +1,67 @@
 <template>
   <div>
-    <header class="header-main">
+    <header class="hm-height header-main ">
       <v-container>
-        <div class="display-3 center main">
+        <div class="display-3 center main-title">
           Unified Global Connections
         </div>
         <!-- <div class="display-1 center subMain">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
         </div> -->
       </v-container>
+    </header>
 
-      <div :class="[{'content-body small': $vuetify.breakpoint.smAndDown},
-        {'content-body': $vuetify.breakpoint.mdAndUp}]">
-        <v-layout row wrap>
-          <v-flex xs12>
-            <v-card id="our-mission" class="mission">
-              <v-container>
-                <div class="display-2 center underTitle">
-                  ~ Our Mission ~
-                </div>
-                <div class="center mt-4 headline">
-                  To build meaningful connections between people of different cultures in order to nurture compassionate and accepting communities across the world.
+    <section id="mission-vision-box" class="card-content">
+      <v-layout row wrap>
+        <v-flex xs12>ß
+          <v-card id="our-mission" class="main-card ontop">
+            <v-container>
+              <div class="display-2 center underTitle">
+                ~ Our Mission ~
+              </div>
+              <div class="center mt-4 headline">
+                To build meaningful connections between people of different cultures in order to nurture compassionate and accepting communities across the world.
 
-                </div>
-              </v-container>
-            </v-card>
+              </div>
+            </v-container>
+          </v-card>
 
-            <v-card id="our-vision" class="vision mt-3">
-              <v-container>
-                <div class="display-2 center underTitle">
-                  ~ Our Vision ~
-                </div>
-                <div class="center mt-4 headline">
-                  To become a community development network that transcends cultural and geographical boundaries, cultivating a united global community.
+          <v-card id="our-vision" class=" main-card ontop mt-3">
+            <v-container>
+              <div class="display-2 center underTitle">
+                ~ Our Vision ~
+              </div>
+              <div class="center mt-4 headline">
+                To become a community development network that transcends cultural and geographical boundaries, cultivating a united global community.
 
-                </div>
-              </v-container>
-            </v-card>
-          </v-flex>
-        </v-layout>
-
-
+              </div>
+            </v-container>
+          </v-card>
+        </v-flex>
+      </v-layout>
+  </section>
+<hr />
+  <section id="featured">
+    <v-container>
+      <div class="center display-2 mt-4">
+        Featured Content
       </div>
 
-    </header>
+      <div>
+        <v-container>
+          <v-layout row wrap>
+            <v-flex xs12 sm12 md4>
+              <v-card>JGM SOCCER T</v-card>
+            </v-flex>
+
+          </v-layout>
+        </v-container>
+
+      </div>
+    </v-container>
+
+
+  </section>
 
 
   </div>
@@ -66,20 +84,8 @@ export default {
 header{
   background-image: url('../../assets/back-community.jpg');
 }
-.main{
-margin-top:20px;
 
-}
-.content-body{
-  position:absolute;
-  left:20%;
-  right:20%;
-  top:80%;
-}
-.small{
-  left:0;
-  right:0;
-}
+
 .underTitle:after{
   content:'';
   display:block;
