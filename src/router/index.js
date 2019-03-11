@@ -23,7 +23,7 @@ export default new Router({
       component: Home,
     },
     {
-      path: '/team',
+      path: '/who-we-are',
       name: 'Team',
       component: Team,
     },

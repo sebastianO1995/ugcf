@@ -4,7 +4,7 @@
     <nav-drawer  :ovNav = "ovNav"
       @closedDrawer = 'updateDrawerClass($event)'
       @openedDrawer= 'updateDrawerClass($event)'></nav-drawer>
-        <v-content class="content">
+        <v-content class="content page">
         <router-view></router-view>
         </v-content>
       </div>
@@ -50,11 +50,28 @@ export default {
   -moz-osx-font-smoothing: grayscale;
 
 }
+/* Gradient color1 - color2 - color1 */
+
+hr.style-one {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, var(--v-primary-lighten2), var(--v-primary-base), var(--v-primary-lighten2));
+}
+hr.style-two {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
 body{
-  background-color: #fbfbfb;
+
+}
+.page{
+    background-color: var(--v-info-lighten2);
 }
 *{
   margin:0;
+  padding: 0;
 }
 .center {
   text-align: center;
@@ -77,10 +94,10 @@ body{
 }
 .ovNav:before{
   content:'';
-  height:86% !important;
+  height:66px !important;
 }
 .content{
-  margin-top:78px;
+
   margin-bottom:5rem;
 
 }

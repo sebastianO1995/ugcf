@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="page">
     <header class="hm-height header-main ">
       <v-container>
         <div class="display-3 center main-title">

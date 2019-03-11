@@ -9,13 +9,19 @@ import router from './router';
 
 Vue.use(Vuetify, {
   theme: {
-    primary: '#006DA6', //
-    secondary: '#BEFFFC', //
-    accent: '#27D0E8',
+    primary: '#41CEE8', // (65,206,232)
+    secondary: '#BBE1FF', //(187,225,255)
+    accent: '#AAE8C8',
     error: '#FF5252',
-    info: '#264b51',
-    success: '#4CAF50',
+    info: '#BEFFFC', //(190,255,252)
+    success: '#AAE8C8',
     warning: '#FFC107',
+
+    //AAE8C8(170,232,200)
+    //BBFFD2 (187,55,210)
+  },
+  options: {
+    customProperties: true,
   },
 });
 
