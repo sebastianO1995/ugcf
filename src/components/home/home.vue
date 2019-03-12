@@ -13,7 +13,7 @@
 
     <section id="mission-vision-box" class="card-content">
       <v-layout row wrap>
-        <v-flex xs12>ß
+        <v-flex xs12>
           <v-card id="our-mission" class="main-card ontop">
             <v-container>
               <div class="display-2 center underTitle">
