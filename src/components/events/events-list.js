@@ -23,7 +23,7 @@ export default [
     },
     description: 'TEST',
     registration: true,
-    registrationLink: '',
+    registrationLink: '/events/soccer-tournament-registration-form',
     socialMedia: true,
     socials: [
       {

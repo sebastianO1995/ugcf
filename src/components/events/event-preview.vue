@@ -83,7 +83,8 @@
                 </div>
               </v-flex>
               <v-flex xs12 sm4 v-if="event.registration">
-                <v-btn color="success" :class="{'btn-xs':$vuetify.breakpoint.xs}">
+                <v-btn color="success" :class="{'btn-xs':$vuetify.breakpoint.xs}"
+                  :to="event.registrationLink">
                   <span class="primary--text text--darken-4 font-weight-bold">
                     Register
                   </span>
