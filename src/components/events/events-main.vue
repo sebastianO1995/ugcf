@@ -24,7 +24,9 @@
               </div>
               <hr class="style-eight mt-3" />
               <div class="mt-4">
-                <event-box></event-box>
+                <div v-for= "event in eventStore" :key="event.id">
+                  <event-box :event="event"></event-box>
+                </div>
               </div>
             </v-container>
           </v-card>
@@ -46,10 +48,18 @@
 </template>
 
 <script>
-import eventPreview from '@/components/events/event-preview.vue'
+import eventPreview from '@/components/events/event-preview.vue';
+import events from '@/components/events/events-list.js';
+
 export default {
   components:{
     'event-box': eventPreview,
+  },
+  data () {
+    return{
+      eventStore: events,
+
+    };
   },
 };
 </script>

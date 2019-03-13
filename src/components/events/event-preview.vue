@@ -6,12 +6,19 @@
         <!-- Image -->
         <v-flex x12 sm12 md4>
           <v-container>
-            <v-img :src="require('@/assets/JGMT-Ball.jpg')"
-                  cotain
-                  height="240"
-                  :aspect-ratio="16/9"
-                  class="grey lighten-2">
-                </v-img>
+            <div class="single-image" v-if="event.images.length <= 1">
+              <v-img :src="require(`@/assets/${event.images[0].link}`)"
+                    height="240"
+                    :aspect-ratio="16/9"
+                    class="primary lighten-2">
+              </v-img>
+            </div>
+            <!-- MORE IMAGES -->
+            <div v-else class="carousel">
+
+            </div>
+
+
           </v-container>
         </v-flex>
         <!-- INFO -->
@@ -20,7 +27,7 @@
             <v-layout row wrap>
               <v-flex xs12>
                 <div class="headline left font-weight-medium  primary--text text--darken-4">
-                  JGM Memorial Soccer Tournament
+                  {{event.title}}
                 </div>
               </v-flex>
               <v-flex xs12>
@@ -30,25 +37,30 @@
                   <!-- Cost -->
                   <div class="event-cost">
                     <strong>Cost:</strong>
-                    $
+                    <span v-if="!event.isFree">${{event.cost}}</span>
+                    <span v-else>Free</span>
 
                   </div>
                   <!-- Date -->
                   <div class="event-date">
-                    <strong>Date:</strong> Saturday, June 22nd, 2019
+                    <strong>Date:</strong> {{event.date.dayOfWeek}}, {{event.date.month}}
+                    {{event.date.day}}, {{event.date.year}}
 
 
                   </div>
                   <!-- Time -->
                   <div class="event-time">
-                    <strong>Time:</strong> 8:00am
+                    <strong>Time:</strong> {{event.time}}
 
                   </div>
 
                   <!-- Location -->
                   <div class="event-location">
                     <strong>Location:</strong>
-                    <br />Fred Wolfe Soccer Park<br />300 Hollow Road<br />Orange, CT 06477
+                    <br />{{event.location.name}}
+                    <br />{{event.location.street}}
+                    <br />{{event.location.city}}, {{event.location.state}}
+                    {{event.location.zip}}
 
                   </div>
 
@@ -67,17 +79,18 @@
                   </span>
                 </v-btn>
                 <div class="hidden-sm-and-up">
-                  <more-info :moreInfo="moreInfo"></more-info>
+                  <more-info :moreInfo="moreInfo" :description="event.description"></more-info>
                 </div>
               </v-flex>
-              <v-flex xs12 sm4>
+              <v-flex xs12 sm4 v-if="event.registration">
                 <v-btn color="success" :class="{'btn-xs':$vuetify.breakpoint.xs}">
                   <span class="primary--text text--darken-4 font-weight-bold">
                     Register
                   </span>
                 </v-btn>
               </v-flex>
-              <v-flex xs12 sm4 :class="{'center mt-2':$vuetify.breakpoint.xs}">
+              <v-flex xs12 sm4 :class="{'center mt-2':$vuetify.breakpoint.xs}"
+                v-if="event.socialMedia">
                 <v-layout row wrap>
                   <v-flex xs12>
                     <div class="font-weight-medium primary--text text--darken-4">
@@ -85,8 +98,9 @@
                     </div>
                   </v-flex>
                   <v-flex xs12>
-                    <v-btn flat icon color="primary darken-2">
-                      <v-icon size= "24px">fab fa-facebook</v-icon>
+                    <v-btn flat icon color="primary darken-2"
+                      v-for="social in event.socials" :key="social.item">
+                      <v-icon size= "24px">{{social.icon}}</v-icon>
                     </v-btn>
                   </v-flex>
                 </v-layout>
@@ -99,7 +113,7 @@
 
       <!-- More Info -->
       <div class="hidden-xs-only">
-        <more-info :moreInfo="moreInfo"></more-info>
+        <more-info :moreInfo="moreInfo" :description="event.description"></more-info>
       </div>
 
 
@@ -110,7 +124,9 @@
 
 <script>
 import eventMore from '@/components/events/event-more-info.vue';
+
 export default {
+  props: ['event'],
   components:{
     'more-info': eventMore,
   },
