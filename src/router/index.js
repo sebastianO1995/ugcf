@@ -3,7 +3,13 @@ import Router from 'vue-router';
 // eslint-disable-next-line
 import Home from '@/components/home/home.vue';
 // eslint-disable-next-line
-import Events from '@/components/events/events-main.vue';
+import EventsHome from '@/components/events/events-home.vue';
+// eslint-disable-next-line
+import eventMain from '@/components/events/events-main.vue'
+// eslint-disable-next-line
+import jgmST from '@/components/events/forms/jgm-registration.vue'
+
+
 // eslint-disable-next-line
 import Team from '@/components/team/team-main.vue';
 // eslint-disable-next-line
@@ -30,7 +36,12 @@ export default new Router({
     {
       path: '/events',
       name: 'Events',
-      component: Events,
+      component: EventsHome,
+      children: [
+        {path: '', component: eventMain},
+        {path: 'soccer-tournament-registration-form', component: jgmST}
+      ]
+
     },
     {
       path: '/contact',

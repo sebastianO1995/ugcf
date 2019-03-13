@@ -51,6 +51,11 @@ export default {
 
 }
 /* Gradient color1 - color2 - color1 */
+/* Flaired edges, by Tomas Theunissen */
+
+.o-bk{
+  overflow-wrap:break-word;
+}
 
 hr.style-one {
     border: 0;
@@ -62,6 +67,43 @@ hr.style-two {
     border: 0;
     height: 1px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+hr.style-seven {
+    overflow: visible; /* For IE */
+    height: 30px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px 0 0 0;
+    border-radius: 20px;
+}
+hr.style-seven:before { /* Not really supposed to work, but does */
+    display: block;
+    content: "";
+    height: 30px;
+    margin-top: -31px;
+    border-style: solid;
+    border-color: black;
+    border-width: 0 0 1px 0;
+    border-radius: 20px;
+}
+/* Glyph, by Harry Roberts */
+
+hr.style-eight {
+    overflow: visible; /* For IE */
+    padding: 0;
+    border: none;
+    border-top: medium double #333;
+    color: var(--v-accent-base);
+    text-align: center;
+}
+hr.style-eight:after {
+    content: "∞";
+    display: inline-block;
+    position: relative;
+    top: -0.7em;
+    font-size: 1.5em;
+    padding: 0 0.25em;
+    background: white;
 }
 body{
 
@@ -115,6 +157,7 @@ body{
 }
 .main-title{
 margin-top:5rem;
+overflow-wrap: break-word;
 
 }
 /*main-card*/
@@ -134,10 +177,11 @@ margin-top:5rem;
 .ontop{
   top: -80px;
 }
+
 @media only screen and (max-width:600px) {
 
   .hm-height{
-    height:50vh;
+    height:40vh;
   }
 }
 </style>
