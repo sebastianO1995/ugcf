@@ -50,10 +50,6 @@ export default {
 
 <style lang="css" scoped>
 
-
-.e-xs{
-  bottom:45%;
-}
 #events-box{
   overflow-wrap: break-word;
 }
