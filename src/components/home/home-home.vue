@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="page bw">
 
-    <v-img :src="require('@/assets/events.jpg')"
+    <v-img :src="require('@/assets/home.jpg')"
           :class="['primary lighten-2',
             {'hh-md': $vuetify.breakpoint.mdAndUp},
             {'hh-sm': $vuetify.breakpoint.smAndDown}]"
@@ -19,7 +19,7 @@
               {'display-3': $vuetify.breakpoint.md || $vuetify.breakpoint.lg},
               {'display-4': $vuetify.breakpoint.xl}]"
               >
-              Events
+              Unified Global Connections
             </p>
 
           </v-flex>
@@ -37,10 +37,10 @@ export default {
   methods:{
     posCalc(){
       if(this.$vuetify.breakpoint.mdAndUp){
-        return 'center 5%'
+        return 'center 50%'
       }
       else if (this.$vuetify.breakpoint.smAndDown) {
-        return 'center center'
+        return '10% center'
 
       }
     }

@@ -1,11 +1,11 @@
 <template>
   <v-app id="app">
     <div :class="{overlay}">
-    <nav-drawer  :ovNav = "ovNav"
+    <nav-drawer
       @closedDrawer = 'updateDrawerClass($event)'
       @openedDrawer= 'updateDrawerClass($event)'></nav-drawer>
-        <v-content class="content page">
-        <router-view></router-view>
+        <v-content class="content">
+          <router-view></router-view>
         </v-content>
       </div>
   </v-app>
@@ -13,7 +13,7 @@
 
 <script>
 // eslint-disable-next-line
-import navigation from '@/components/header.vue';
+import navigation from '@/components/nav-drawer.vue';
 // eslint-disable-next-line
 import mainFoot from '@/components/footer-main.vue';
 
@@ -21,17 +21,14 @@ export default {
   data() {
     return {
       overlay: '',
-      ovNav: '',
     };
   },
   methods: {
     updateDrawerClass(op) {
       if (op) {
         this.overlay = 'overlay';
-        this.ovNav = 'ovNav';
       } else {
         this.overlay = '';
-        this.ovNav = '';
       }
     },
   },
@@ -51,23 +48,23 @@ export default {
 
 }
 /* Gradient color1 - color2 - color1 */
-/* Flaired edges, by Tomas Theunissen */
-
-.o-bk{
-  overflow-wrap:break-word;
-}
+/* HR STYLE ONE _ TWO */
 
 hr.style-one {
     border: 0;
     height: 1px;
     background: #333;
-    background-image: linear-gradient(to right, var(--v-primary-lighten2), var(--v-primary-base), var(--v-primary-lighten2));
+    background-image: linear-gradient(to right, var(--v-primary-lighten2),
+    var(--v-primary-base), var(--v-primary-lighten2));
 }
 hr.style-two {
     border: 0;
     height: 1px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
+
+/* HR STYLE 7 */
 hr.style-seven {
     overflow: visible; /* For IE */
     height: 30px;
@@ -86,7 +83,7 @@ hr.style-seven:before { /* Not really supposed to work, but does */
     border-width: 0 0 1px 0;
     border-radius: 20px;
 }
-/* Glyph, by Harry Roberts */
+/*HR STYLE 8 */
 
 hr.style-eight {
     overflow: visible; /* For IE */
@@ -143,22 +140,14 @@ body{
   margin-bottom:5rem;
 
 }
-/*HEADERS*/
-.hm-height{
-  height:60vh;
-}
-.header-main{
+/*Text Breaks*/
 
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position:center;
-  color:white;
-  position:relative;
+.bw{
+  word-break:break-word;
 }
-.main-title{
-margin-top:5rem;
-overflow-wrap: break-word;
 
+.o-bk{
+  overflow-wrap:break-word;
 }
 /*main-card*/
 
@@ -178,10 +167,4 @@ overflow-wrap: break-word;
   top: -80px;
 }
 
-@media only screen and (max-width:600px) {
-
-  .hm-height{
-    height:40vh;
-  }
-}
 </style>
