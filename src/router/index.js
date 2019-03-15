@@ -14,7 +14,10 @@ import jgmST from '@/components/events/forms/jgm-registration.vue'
 
 
 // eslint-disable-next-line
-import Team from '@/components/team/team-main.vue';
+import teamMain from '@/components/team/team-main.vue';
+// eslint-disable-next-line
+import teamHome from '@/components/team/team-home.vue';
+
 // eslint-disable-next-line
 import Contact from '@/components/contact/contact-main.vue';
 // eslint-disable-next-line
@@ -40,7 +43,13 @@ export default new Router({
     {
       path: '/who-we-are',
       name: 'Team',
-      component: Team,
+      component: teamHome,
+      children: [
+        {
+          path: '',
+          component: teamMain,
+        }
+      ],
     },
     {
       path: '/events',
