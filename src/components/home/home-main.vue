@@ -37,9 +37,9 @@
         <div>
           <v-container>
             <v-layout row wrap>
-              <v-flex xs12 sm12 md4>
-                <!-- @TO-DO: Featured Content Component -->
-                <v-card>JGM SOCCER T</v-card>
+              <v-flex xs12 sm12 md6 lg4>
+                <!-- @ToDo: link buttons, decide where more info goes -->
+                <v-container><feature-card></feature-card></v-container>
               </v-flex>
             </v-layout>
           </v-container>
@@ -51,8 +51,12 @@
 </template>
 
 <script>
+import featured from '@/components/home/feature-card.vue';
+
 export default {
-  name: 'Home',
+  components: {
+    'feature-card': featured,
+  },
   data() {
     return {
       about: [
