@@ -12,14 +12,15 @@ import eventMain from '@/components/events/events-main.vue'
 // eslint-disable-next-line
 import jgmST from '@/components/events/forms/jgm-registration.vue'
 
-
 // eslint-disable-next-line
 import Team from '@/components/team/team-main.vue';
 // eslint-disable-next-line
 import Contact from '@/components/contact/contact-main.vue';
-// eslint-disable-next-line
-import Why from '@/components/inspiration/inspiration-main.vue'
 
+// eslint-disable-next-line
+import whyHome from '@/components/inspiration/inspiration-home.vue'
+// eslint-disable-next-line
+import whyMain from '@/components/inspiration/inspiration-main.vue'
 
 Vue.use(Router);
 
@@ -49,8 +50,7 @@ export default new Router({
       children: [
         { path: '', component: eventMain },
         { path: 'soccer-tournament-registration-form', component: jgmST }
-      ]
-
+      ],
     },
     {
       path: '/contact',
@@ -60,7 +60,10 @@ export default new Router({
     {
       path: '/our-inspiration',
       name: 'Why',
-      component: Why,
+      component: whyHome,
+      children: [
+        { path: '', component: whyMain },
+      ],
     },
   ],
 });
