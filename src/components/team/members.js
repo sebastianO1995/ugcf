@@ -16,7 +16,7 @@ export default [
     lastName: 'Durkee',
     position: 'Chief Operating Officer',
     bio: 'Lisa Durkee is a production coordinator who works with media and theater producers and directors pulling together the ‘puzzle’ pieces of their projects. Lisa is trained and certified in broadcasting, general communications and media operations with extensive experience in organizational management.',
-    image: 'Kevin',
+    image: 'Lisa',
   },
   {
     id: 2,
@@ -24,7 +24,7 @@ export default [
     lastName: 'Durkee',
     position: 'Chief Financial Officer',
     bio: 'Presently Site Supervisor and Assistant Warehouse Manager at United Staging and Rigging, and alumni advisor/facilitator of undergraduates for the Sigma Chi Fraternity.',
-    image: 'Kevin',
+    image: 'Dan',
   },
   {
     id: 3,
@@ -39,8 +39,8 @@ export default [
     firstName: 'Sebastian',
     lastName: 'Orellana',
     position: 'Chief Technology Officer',
-    bio: 'Sebastian Orellana is a recent graduate from Western Connecticut State University with a Bachelor\'s degree in Computer Science and a Bachelor\'s degree in Mathematics. He is a Web Developer for Western CT State University,  ',
-    image: 'Kevin'
+    bio: 'Sebastian Orellana is a recent graduate from Western Connecticut State University with a Bachelor\'s degree in Computer Science and a Bachelor\'s degree in Mathematics. He works as a Web Developer for Western CT State University.   ',
+    image: 'Sebastian'
   },
   {
     id: 5,

@@ -1,15 +1,16 @@
 <template lang="html">
   <v-card class="elevation-8">
     <v-container>
-      <v-layout row wrap v-if="member.id %2 === 0 || $vuetify.breakpoint.smAndDown">
-        <v-flex xs12 sm12 md4>
+      <v-layout row wrap v-if="member.id %2 === 0 || $vuetify.breakpoint.xs">
+        <v-flex xs12 sm4 md4>
           <v-container>
-            <v-img :src="require(`@/assets/team/${member.image}-300x300-nob.png`)"
+            <v-img :src="require(`@/assets/team/square-original/${member.image}-300x300.jpg`)"
              class="bk-img elevation-8"
+
              ></v-img>
           </v-container>
         </v-flex>
-        <v-flex xs12 sm12 md8>
+        <v-flex xs12 sm8 md8>
           <v-container>
             <v-layout row wrap>
               <v-flex xs12>
@@ -32,8 +33,9 @@
           </v-container>
         </v-flex>
       </v-layout>
+
       <v-layout v-else row wrap>
-        <v-flex xs12 sm12 md8>
+        <v-flex xs12 sm8 md8>
           <v-container>
             <v-layout row wrap>
               <v-flex xs12>
@@ -56,9 +58,9 @@
             </v-layout>
           </v-container>
         </v-flex>
-        <v-flex xs12 sm12 md4>
+        <v-flex xs12 sm4 md4>
           <v-container>
-            <v-img :src="require(`@/assets/team/${member.image}-300x300-nob.png`)"
+            <v-img :src="require(`@/assets/team/square-original/${member.image}-300x300.jpg`)"
              class="bk-img elevation-8"
              ></v-img>
           </v-container>
