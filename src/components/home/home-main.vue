@@ -1,72 +1,76 @@
 <template>
-  <div class="page">
-
+  <div>
     <section id="mission-vision-box" class="card-content">
       <v-layout row wrap>
         <v-flex xs12>
-          <v-card id="our-mission" class="main-card ontop">
+          <v-card v-for= "item in about" :key= "item.id" :id="item.id"
+           :class="['main-card ontop elevation-5', {'mt-3': item.id === 'vision'} ]">
             <v-container>
-              <div class="display-2 center underTitle">
-                ~ Our Mission ~
+              <div :class="['center font-weight-medium accent--text text--darken-4 pb-2',
+              { 'display-2': $vuetify.breakpoint.smAndUp },
+              { 'headline' : $vuetify.breakpoint.xs }]">
+                ~ {{item.title}} ~
+                <br />
+                <hr class="style-two mt-3">
               </div>
-              <div class="center mt-4 headline">
-                To build meaningful connections between people of different
-                cultures in order to nurture compassionate and accepting
-                communities across the world.
-
-              </div>
-            </v-container>
-          </v-card>
-
-          <v-card id="our-vision" class="main-card ontop mt-3">
-            <v-container>
-              <div class="display-2 center underTitle">
-                ~ Our Vision ~
-              </div>
-              <div class="center mt-4 headline">
-                To become a community development network that transcends
-                cultural and geographical boundaries, cultivating a united
-                global community.
+              <div :class="['center mt-4 font-weight-light primary--text text--darken-4',
+              { 'headline px-4' : $vuetify.breakpoint.smAndUp },
+              { 'subheading font-weight-medium px-2' : $vuetify.breakpoint.xs }]">
+                {{item.text}}
 
               </div>
             </v-container>
           </v-card>
         </v-flex>
       </v-layout>
-  </section>
-<hr />
-  <section id="featured">
-    <v-container>
-      <div class="center display-2 mt-4">
-        Featured Content
-      </div>
+    </section>
 
-      <div>
-        <v-container>
-          <v-layout row wrap>
-            <v-flex xs12 sm12 md4>
-              <v-card>JGM SOCCER T</v-card>
-            </v-flex>
+    <hr class="style-two"/>
 
-          </v-layout>
-        </v-container>
-
-      </div>
-    </v-container>
-
-
-  </section>
-
-
+    <section id="featured">
+      <v-container>
+        <div :class="['accent--text text--darken-4',
+          { 'display-2 mt-4': $vuetify.breakpoint.smAndUp },
+          { 'headline mt-3 center' : $vuetify.breakpoint.xs }]">
+          Featured Content
+        </div>
+        <div>
+          <v-container>
+            <v-layout row wrap>
+              <v-flex xs12 sm12 md6 lg4>
+                <!-- @ToDo: link buttons, decide where more info goes /create dynamic card -->
+                <v-container><feature-card-jgmt></feature-card-jgmt></v-container>
+              </v-flex>
+            </v-layout>
+          </v-container>
+        </div>
+      </v-container>
+    </section>
   </div>
 
 </template>
 
 <script>
+import JGMEvent from'@/components/home/feature-card-jgmt.vue';
+
 export default {
-  name: 'Home',
+  components: {
+    'feature-card-jgmt': JGMEvent,
+  },
   data() {
     return {
+      about: [
+        {
+          id: 'mission',
+          title: 'Our Mission',
+          text: 'To build meaningful connections between people of different cultures in order to nurture compassionate and accepting communities across the world.',
+        },
+        {
+          id: 'vision',
+          title: 'Our Vision',
+          text: 'To become a community development network that transcends cultural and geographical boundaries, cultivating a united global community.'
+        }
+      ],
 
     };
   },
@@ -76,12 +80,4 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
-.underTitle:after{
-  content:'';
-  display:block;
-  margin: 0 auto;
-  width:40%;
-  padding-top:5px;
-  border-bottom: 1px solid black;
-}
 </style>
