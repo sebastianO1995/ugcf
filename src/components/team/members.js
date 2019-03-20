@@ -39,7 +39,7 @@ export default [
     firstName: 'Sebastian',
     lastName: 'Orellana',
     position: 'Chief Technology Officer',
-    bio: 'Sebastian Orellana is a recent graduate from Western Connecticut State University with a Bachelor\'s degree in Computer Science and a Bachelor\'s degree in Mathematics. He works as a Web Developer for Western CT State University.   ',
+    bio: 'Sebastian Orellana is a recent graduate from Western Connecticut State University with a Bachelor\'s degree in Computer Science and a Bachelor\'s degree in Mathematics. He works as a Web Developer for Western CT State University.   ', //@Todo: Finish Bio
     image: 'Sebastian'
   },
   {
