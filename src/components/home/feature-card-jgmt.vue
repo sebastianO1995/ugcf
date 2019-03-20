@@ -1,5 +1,4 @@
 <template lang="html">
-  <!-- @ToDo: create dynamic slots -->
   <v-card class="elevation-5" :height= "heightC()">
     <v-container>
       <v-img :src="require(`@/assets/JGMT-Ball.jpg`)"

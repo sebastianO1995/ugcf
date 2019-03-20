@@ -38,8 +38,8 @@
           <v-container>
             <v-layout row wrap>
               <v-flex xs12 sm12 md6 lg4>
-                <!-- @ToDo: link buttons, decide where more info goes -->
-                <v-container><feature-card></feature-card></v-container>
+                <!-- @ToDo: link buttons, decide where more info goes /create dynamic card -->
+                <v-container><feature-card-jgmt></feature-card-jgmt></v-container>
               </v-flex>
             </v-layout>
           </v-container>
@@ -51,11 +51,11 @@
 </template>
 
 <script>
-import featured from '@/components/home/feature-card.vue';
+import JGMEvent from'@/components/home/feature-card-jgmt.vue';
 
 export default {
   components: {
-    'feature-card': featured,
+    'feature-card-jgmt': JGMEvent,
   },
   data() {
     return {
