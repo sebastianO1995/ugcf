@@ -19,7 +19,7 @@
             </div>
             <hr class="style-two mb-4" />
             <v-layout row wrap>
-              <v-flex xs12 sm4>
+              <v-flex xs12 sm6>
                 <v-container>
                   <v-layout row wrap>
                     <v-flex xs12>
@@ -79,11 +79,16 @@
           </v-container>
       </v-container>
     </v-card>
+    <contact-form></contact-form>
   </div>
 </template>
 
 <script>
+import contactForm from './contact-form.vue'
 export default {
+  components: {
+    'contact-form': contactForm,
+  },
   methods: {
     calcH () {
       if(this.$vuetify.breakpoint.xl) {
