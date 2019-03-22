@@ -79,9 +79,9 @@
               </v-flex>
 
 
-            </v-layout row>
+            </v-layout>
             <!-- BUTTONS -->
-            <v-layout row wrap>
+            <v-layout row wrap style="margin-left: -13px;">
               <v-flex xs12 sm4>
                 <v-btn :to="event.page" color="info" :class="{'btn-xs':$vuetify.breakpoint.xs}">
                   <span class="primary--text text--darken-4 font-weight-bold">

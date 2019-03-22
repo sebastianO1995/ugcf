@@ -22,7 +22,14 @@
               >
               Unified Global Connections
             </p>
-
+            <p :class="[
+              {'body-2': $vuetify.breakpoint.xs},
+              {'title': $vuetify.breakpoint.sm},
+              {'title': $vuetify.breakpoint.md || $vuetify.breakpoint.lg},
+              {'display-1': $vuetify.breakpoint.xl}]"
+              >
+              A better community for a better tomorrow.
+            </p>
           </v-flex>
 
         </v-layout>

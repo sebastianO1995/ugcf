@@ -27,6 +27,9 @@ import whyHome from '@/components/inspiration/inspiration-home.vue'
 // eslint-disable-next-line
 import whyMain from '@/components/inspiration/inspiration-main.vue'
 
+// eslint-disable-next-line
+import NotFound from '@/components/not-found.vue'
+
 Vue.use(Router);
 
 export default new Router({
@@ -86,6 +89,7 @@ export default new Router({
         { path: 'registration', component: jgmST }
       ]
     },
+    { path: '*', component: NotFound },
 
   ],
 });
