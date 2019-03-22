@@ -7,6 +7,8 @@ import Vue from 'vue';
 import App from './App';
 import router from './router';
 
+import {store} from './store/index.js'
+
 Vue.use(Vuetify, {
   theme: {
     primary: '#41CEE8', // (65,206,232)
@@ -31,6 +33,7 @@ Vue.config.productionTip = false;
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>',
 });

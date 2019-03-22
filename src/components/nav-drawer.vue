@@ -1,5 +1,5 @@
 <template lang="html">
-  <v-card :class="['navigation-bar', {'overlay ovNav': showSide}]">
+  <v-card height="65px" :class="['navigation-bar', {'overlay ovNav': showSide}]">
     <div class="logo">
       <router-link :to="{ name: 'Home' }">
         <img id="myLogo" src="@/assets/logo.png" /></router-link>
