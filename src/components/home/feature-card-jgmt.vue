@@ -1,14 +1,15 @@
 <template lang="html">
   <v-card class="elevation-5" :height= "heightC()">
     <v-container>
-      <v-img :src="require(`@/assets/JGMT-Ball.jpg`)"
+      <v-img :src="require(`@/assets/${event.images[0].link}`)"
             height="200"
             :aspect-ratio="16/9"
             class="primary lighten-2">
             <v-layout pa-2 column fill-height class="lightbox white--text">
               <v-flex class="event-date">
                 <span class="date primary--text text--darken-4
-                font-weight-bold">June 22, 2019</span>
+                font-weight-bold">{{event.date.month}}
+                {{event.date.day}}, {{event.date.year}}</span>
               </v-flex>
           <v-spacer></v-spacer>
           <v-flex shrink>
@@ -29,33 +30,28 @@
       <v-layout row wrap>
         <v-flex xs12>
           <div class="title primary--text text--darken-4 font-weight-medium pb-1 pt-3">
-            JGM Memorial Soccer Tournament
+            {{event.title}}
           </div>
         </v-flex>
         <v-flex xs12>
           <div class="card-content caption primary--text text--darken-3 font-weight-light mb-4 mt-2">
-            The JGM Memorial Soccer Tournament is an annual soccer competition held in honor of the late Jacob Gibbons-Morales.
+            {{event.summary}}
           </div>
         </v-flex>
         <v-flex xs12>
           <v-layout row wrap>
-            <v-flex xs12 sm4 md6 xl4>
-              <v-btn color="info" :class="['center', {'btn-xs mb-2':$vuetify.breakpoint.xs}]">
+            <v-flex xs12 sm6 >
+              <v-btn :to="event.page" color="info" :class="['center', {'btn-xs mb-2':$vuetify.breakpoint.xs}]">
                 <span class="primary--text text--darken-4 font-weight-bold">
                   More Info
                 </span>
               </v-btn>
             </v-flex>
-            <v-flex xs12 sm4 md6 xl4>
-              <v-btn color="success" :class="['center', {'btn-xs':$vuetify.breakpoint.xs}]">
+            <v-flex xs12 sm6>
+              <v-btn :to="event.registrationLink" color="success" :class="['center', {'btn-xs':$vuetify.breakpoint.xs}]">
                 <span class="primary--text text--darken-4 font-weight-bold">
                   Register
                 </span>
-              </v-btn>
-            </v-flex>
-            <v-flex xs12 sm4 md12 xl4 :class="{'center':$vuetify.breakpoint.xs || $vuetify.breakpoint.mdAndUp }">
-              <v-btn flat icon color="primary darken-2">
-                <v-icon size= "24px">fab fa-facebook</v-icon>
               </v-btn>
             </v-flex>
           </v-layout>
@@ -66,7 +62,14 @@
 </template>
 
 <script>
+import JGMEvent from'@/components/events/events-list.js';
 export default {
+
+    data () {
+      return {
+        event: JGMEvent[0],
+      }
+    },
   methods: {
     heightC () {
       if (this.$vuetify.breakpoint.xs){
