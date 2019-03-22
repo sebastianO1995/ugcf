@@ -1,7 +1,7 @@
 <template lang="html">
-<div>
+<section>
   <v-container>
-    <!-- @TODO:validate -->
+
     <v-form @submit.prevent="processForm" ref="form" v-model="valid" lazy-validation>
       <v-layout row wrap>
         <v-flex xs12 sm6 xl4 offset-xl1>
@@ -75,7 +75,7 @@
         </v-flex>
         <v-flex xs12 sm6 xl7>
           <v-fade-transition>
-            <div v-if="!valid" class="body-2 primary--text text--darken-3">
+            <div v-if="!validSubmit" class="body-2 primary--text text--darken-3">
               <v-icon size="14" class="pr-2 error--text">fas fa-exclamation-circle</v-icon>
               Validation errors occurred. Please confirm the fields and submit it again.
             </div>
@@ -85,7 +85,7 @@
     </v-form>
 
   </v-container>
-</div>
+</section>
 </template>
 
 <script>
@@ -94,6 +94,7 @@ export default {
   data () {
     return {
       valid: false,
+      validSubmit: true,
       snackbar: false,
       timeout:5000,
       success: 'Your message was sent successfully!',
@@ -133,11 +134,15 @@ export default {
           this.message=''
           this.email = ''
           this.$refs.form.resetValidation()
+          this.validSubmit = true;
 
         })
         .catch(error => console.log(err))
 
 
+      }
+      else{
+        this.validSubmit = false;
       }
 
 

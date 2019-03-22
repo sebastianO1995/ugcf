@@ -24,6 +24,9 @@
                 Past Events
               </div>
               <hr class="style-eight mt-3" />
+              <div class="mt-4 headline center">
+                No Past Events
+              </div>
             </v-container>
           </v-card>
         </v-flex>

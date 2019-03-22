@@ -1,12 +1,12 @@
 <template lang="html">
-  <div class="page bw">
-    <v-card flat class="contact pt-5" :height="calcH()">
+  <div class="bw">
+    <v-card flat class="contact pt-5">
       <v-container>
 
           <div :class="['display-2 font-weight-bold mt-5',
             {'headline': $vuetify.breakpoint.smAndDown}]">
             <span class="accent--text text--darken-4">Contact</span>
-            <span class="primary--text text--darken-4">United Global Connections</span>
+            <span class="primary--text text--darken-4">Unified Global Connections</span>
           </div>
 
           <v-container>
@@ -90,15 +90,15 @@ export default {
     'contact-form': contactForm,
   },
   methods: {
-    calcH () {
-      if(this.$vuetify.breakpoint.xl) {
-        return '55vh'
-      }
-      else if (this.$vuetify.breakpoint.lg) {
-        return '70vh'
-      }
-
-    }
+    // calcH () {
+    //   if(this.$vuetify.breakpoint.xl) {
+    //     return '55vh'
+    //   }
+    //   else if (this.$vuetify.breakpoint.lg) {
+    //     return '70vh'
+    //   }
+    //
+    // }
   }
 };
 </script>

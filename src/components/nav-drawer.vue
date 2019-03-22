@@ -1,7 +1,7 @@
 <template lang="html">
   <v-card height="65px" :class="['navigation-bar', {'overlay ovNav': showSide}]">
     <div class="logo">
-      <router-link :to="{ name: 'Home' }">
+      <router-link to='/'>
         <img id="myLogo" src="@/assets/logo.png" /></router-link>
     </div>
     <!-- Big Screen Begin -->
@@ -52,7 +52,7 @@
             <div v-for="itemDrawer in menuItems" :key="itemDrawer.name">
               <div v-if="!itemDrawer.hasDropdown">
                 <router-link  :to="itemDrawer.link" >
-                  <li class="drawer-li">
+                  <li class="drawer-li" v-on:click="closeNav()">
                     <div class="drawer-item headline">
                       <div class = "drawer-item-icon">
                         <v-icon color="primary darken-4" size="22">{{itemDrawer.icon}}</v-icon>
@@ -63,7 +63,7 @@
                 </router-link>
               </div>
               <div v-else>
-                <li class="drawer-li">
+                <li class="drawer-li" v-on:click="closeNav()" >
                   <div class="drawer-item headline">
                     <div class = "drawer-item-icon">
                       <v-icon color="primary darken-4" size="22">{{itemDrawer.icon}}</v-icon>
@@ -199,8 +199,9 @@ export default {
   padding:5px 0px 5px 10px;
 }
 #myLogo{
-  height:50px;
-  width:50px;
+  height:69px;
+  width:57px;
+  padding: 10px 5px 5px 5px;
 }
 
 /*navigation*/
