@@ -23,10 +23,14 @@
               Who we are
             </p>
             <v-container>
-              <div class="title hidden-xs-only">
-                <!-- @ToDo: Team Description -->
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </div>
+              <v-layout row wrap class="hidden-xs-only">
+                <v-flex sm8 offset-sm2>
+                  <div :class="['title ', {'body-2': $vuetify.breakpoint.smAndDown}]" style="line-height: 1.2 !important">
+                  Dedicated to the betterment of community and self, the UGC team prides itself on its passion and determination to succeed. Each member, a leader in his/her own right, has extensive knowledge and experience in the different facets of what makes a successful organization. Chosen based on their individual merits, they come together to form a diverse group of global citizens from all walks of life, with one common goal: to plant trees under whose shade they will never sit.
+                  </div>
+                </v-flex>
+              </v-layout>
+
             </v-container>
 
 

@@ -23,7 +23,7 @@ export default [
     firstName: 'Dan',
     lastName: 'Durkee',
     position: 'Chief Financial Officer',
-    bio: 'Presently Site Supervisor and Assistant Warehouse Manager at United Staging and Rigging, and alumni advisor/facilitator of undergraduates for the Sigma Chi Fraternity.',
+    bio: 'Dan Durkee has been a CPA for over 30 years. He is a contract CFO and serial entrepreneur and has started, owned, and managed dozens of companies. Dan has extensive experience building the internal infrastructure of startup companies and re-organizing troubled companies. He has also worked with several nonprofits.',
     image: 'Dan',
   },
   {

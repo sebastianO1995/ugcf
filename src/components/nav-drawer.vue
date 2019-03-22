@@ -63,7 +63,7 @@
                 </router-link>
               </div>
               <div v-else>
-                <li class="drawer-li" v-on:click="closeNav()" >
+                <li class="drawer-li">
                   <div class="drawer-item headline">
                     <div class = "drawer-item-icon">
                       <v-icon color="primary darken-4" size="22">{{itemDrawer.icon}}</v-icon>
@@ -75,15 +75,13 @@
                   </div>
                   <ul class="drawer-ul-sub">
                     <router-link v-for="sub in itemDrawer.subMenu" :key="sub.text" :to="sub.link">
-                      <li class="drawer-li-sub subheading">
+                      <li class="drawer-li-sub subheading" v-on:click="closeNav()">
                         {{sub.text}}
                       </li>
                     </router-link>
                   </ul>
                 </li>
               </div>
-
-
             </div>
           </ul>
         </v-card>
