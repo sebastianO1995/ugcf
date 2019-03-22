@@ -24,13 +24,15 @@
         <!-- INFO -->
         <v-flex xs12 sm12 md8>
           <v-container>
-            <v-layout row wrap>
+            <v-layout row wrap class="pb-2">
               <v-flex xs12>
                 <div class="headline left font-weight-medium  primary--text text--darken-4">
                   {{event.title}}
                 </div>
               </v-flex>
-              <v-flex xs12>
+            </v-layout>
+            <v-layout row wrap class="mb-2">
+              <v-flex xs12 sm6>
                 <div :class="['py-1 pl-1 accent--text text--darken-4',
                   {'event-details-xs': $vuetify.breakpoint.xs},
                   {'event-details': $vuetify.breakpoint.smAndUp}] ">
@@ -67,20 +69,25 @@
 
                 </div>
               </v-flex>
+              <v-flex xs12 sm6>
+                <div class="title primary--text text--darken-4 pb-1">
+                  About the event
+                </div>
+                <div class="body-2 font-weight-light primary--text text--darken-4">
+                  {{event.summary}}
+                </div>
+              </v-flex>
 
 
             </v-layout row>
             <!-- BUTTONS -->
             <v-layout row wrap>
               <v-flex xs12 sm4>
-                <v-btn color="info" v-on:click="showmore()" :class="{'btn-xs':$vuetify.breakpoint.xs}">
+                <v-btn :to="event.page" color="info" :class="{'btn-xs':$vuetify.breakpoint.xs}">
                   <span class="primary--text text--darken-4 font-weight-bold">
                     More Info
                   </span>
                 </v-btn>
-                <div class="hidden-sm-and-up">
-                  <more-info :moreInfo="moreInfo" :description="event.description"></more-info>
-                </div>
               </v-flex>
               <v-flex xs12 sm4 v-if="event.registration">
                 <v-btn color="success" :class="{'btn-xs':$vuetify.breakpoint.xs}"
@@ -111,13 +118,10 @@
         </v-flex>
       </v-layout>
 
-
       <!-- More Info -->
-      <div class="hidden-xs-only">
+      <!-- <div class="hidden-xs-only">
         <more-info :moreInfo="moreInfo" :description="event.description"></more-info>
-      </div>
-
-
+      </div> -->
     </v-card>
   </v-container>
 
