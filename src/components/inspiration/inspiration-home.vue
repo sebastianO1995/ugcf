@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="bw">
 
-    <v-img :src="require('@/assets/events.jpg')"
+    <v-img :src="require('@/assets/inspiration/jgm-1.jpeg')"
 
           :class="['primary lighten-2',
             {'hh-md': $vuetify.breakpoint.mdAndUp},
@@ -20,7 +20,7 @@
               {'display-3': $vuetify.breakpoint.md || $vuetify.breakpoint.lg},
               {'display-4': $vuetify.breakpoint.xl}]"
               >
-              Events
+              Our Inspiration
             </p>
 
           </v-flex>
@@ -38,15 +38,14 @@ export default {
   methods: {
     posCalc() {
       if (this.$vuetify.breakpoint.mdAndUp) {
-        return 'center 5%';
+        return 'center 15%';
       }
-      return 'center center';
+      return '10% 5%';
     },
   },
 };
 </script>
 
 <style lang="css" scoped>
-
 
 </style>

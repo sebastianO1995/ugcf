@@ -1,8 +1,7 @@
-//This file holds stores the event information
+// This file holds stores the event information
 export default [
-  //JGM Soccer Tournament
-
- {
+  // JGM Soccer Tournament
+  {
     id: 0,
     title: 'JGM Memorial Soccer Tournament',
     date: {
@@ -11,9 +10,15 @@ export default [
       day: '22nd',
       year: '2019',
     },
+    rain: {
+      dayOfWeek: 'Sunday',
+      month: 'June',
+      day: '23rd',
+      year: '2019',
+    },
     time: '8:00am',
     isFree: false,
-    cost:'15.00',
+    cost: '15.00 per player',
     location: {
       name: 'Fred Wolfe Soccer Park',
       street: '300 Hollow Road',
@@ -21,9 +26,11 @@ export default [
       state: 'CT',
       zip: '06477',
     },
-    description: 'TEST',
+    description: 'The JGM Memorial Soccer Tournament is an annual soccer competition held in honor of the late Jacob Gibbons-Morales. Throughout his life, Jacob’s insatiable love for soccer brought together hundreds of people from different cultures and backgrounds by organizing numerous events. From local pick-up games in Connecticut to transporting groups of people to professional games both domestic, as well as on the international stage, Jacob spread his passion for the game throughout the United States as well as abroad. With this honorary tournament, we aim to carry on Jacob’s spirit and mission to bridge cultural barriers.',
+    summary: 'The JGM Memorial Soccer Tournament is an annual soccer competition held in honor of the late Jacob Gibbons-Morales. Teams can register by following the regsitration link. T-shirt, lunch and refreshments will be provided. Registration ends: May 15, 2019',
+    page: '/jgm-soccer-tournament',
     registration: true,
-    registrationLink: '/events/soccer-tournament-registration-form',
+    registrationLink: '/jgm-soccer-tournament/registration',
     socialMedia: true,
     socials: [
       {
@@ -38,7 +45,7 @@ export default [
         link: 'JGMT-Ball.jpg',
         lazy: '',
         alt: 'image of soccer ball',
-      }
-    ]
+      },
+    ],
   },
 ];

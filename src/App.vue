@@ -1,19 +1,22 @@
 <template>
   <v-app id="app">
     <div :class="{overlay}">
-    <nav-drawer  :ovNav = "ovNav"
-      @closedDrawer = 'updateDrawerClass($event)'
-      @openedDrawer= 'updateDrawerClass($event)'></nav-drawer>
-        <v-content class="content page">
-        <router-view></router-view>
+      <nav-drawer
+        @closedDrawer = 'updateDrawerClass($event)'
+        @openedDrawer= 'updateDrawerClass($event)'></nav-drawer>
+        <v-content class="content">
+          <router-view></router-view>
+
         </v-content>
+        <main-footer></main-footer>
+
       </div>
   </v-app>
 </template>
 
 <script>
 // eslint-disable-next-line
-import navigation from '@/components/header.vue';
+import navigation from '@/components/nav-drawer.vue';
 // eslint-disable-next-line
 import mainFoot from '@/components/footer-main.vue';
 
@@ -21,17 +24,14 @@ export default {
   data() {
     return {
       overlay: '',
-      ovNav: '',
     };
   },
   methods: {
     updateDrawerClass(op) {
       if (op) {
         this.overlay = 'overlay';
-        this.ovNav = 'ovNav';
       } else {
         this.overlay = '';
-        this.ovNav = '';
       }
     },
   },
@@ -48,26 +48,67 @@ export default {
   font-family: 'Montserrat', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--v-info-lighten2);
+}
+/* Header properties */
+.hh-md{
+  height:70vh !important;
+}
+.hh-sm{
+  height:50vh !important;
 
+}
+.page-title{
+  color: var(--v-secondary-lighten4);
+  text-shadow: 0 1px 0 #ccc,
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+
+
+}
+.page-title::selection{
+  background-color: var(--v-secondary-base);
+  color: var(--v-primary-ligthen4);
+  text-shadow: 0 1px 0 #ccc,
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
 }
 /* Gradient color1 - color2 - color1 */
-/* Flaired edges, by Tomas Theunissen */
-
-.o-bk{
-  overflow-wrap:break-word;
-}
+/* HR STYLE ONE _ TWO */
 
 hr.style-one {
     border: 0;
     height: 1px;
     background: #333;
-    background-image: linear-gradient(to right, var(--v-primary-lighten2), var(--v-primary-base), var(--v-primary-lighten2));
+    background-image: linear-gradient(to right, var(--v-primary-lighten2),
+    var(--v-primary-base), var(--v-primary-lighten2));
 }
 hr.style-two {
     border: 0;
     height: 1px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
+
+/* HR STYLE 7 */
 hr.style-seven {
     overflow: visible; /* For IE */
     height: 30px;
@@ -86,7 +127,7 @@ hr.style-seven:before { /* Not really supposed to work, but does */
     border-width: 0 0 1px 0;
     border-radius: 20px;
 }
-/* Glyph, by Harry Roberts */
+/*HR STYLE 8 */
 
 hr.style-eight {
     overflow: visible; /* For IE */
@@ -107,9 +148,6 @@ hr.style-eight:after {
 }
 body{
 
-}
-.page{
-    background-color: var(--v-info-lighten2);
 }
 *{
   margin:0;
@@ -140,25 +178,17 @@ body{
 }
 .content{
 
-  margin-bottom:5rem;
+min-height: calc(100vh);
 
 }
-/*HEADERS*/
-.hm-height{
-  height:60vh;
-}
-.header-main{
+/*Text Breaks*/
 
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position:center;
-  color:white;
-  position:relative;
+.bw{
+  word-break:break-word;
 }
-.main-title{
-margin-top:5rem;
-overflow-wrap: break-word;
 
+.o-bk{
+  overflow-wrap:break-word;
 }
 /*main-card*/
 
@@ -178,10 +208,4 @@ overflow-wrap: break-word;
   top: -80px;
 }
 
-@media only screen and (max-width:600px) {
-
-  .hm-height{
-    height:40vh;
-  }
-}
 </style>

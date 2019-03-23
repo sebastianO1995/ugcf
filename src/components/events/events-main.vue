@@ -24,6 +24,9 @@
                 Past Events
               </div>
               <hr class="style-eight mt-3" />
+              <div class="mt-4 headline center">
+                No Past Events
+              </div>
             </v-container>
           </v-card>
         </v-flex>
@@ -32,17 +35,16 @@
 </template>
 
 <script>
-import eventPreview from '@/components/events/event-preview.vue';
-import events from '@/components/events/events-list.js';
+import eventPreview from '@/components/events/event-preview';
+import events from '@/components/events/events-list';
 
 export default {
-  components:{
+  components: {
     'event-box': eventPreview,
   },
-  data () {
-    return{
+  data() {
+    return {
       eventStore: events,
-
     };
   },
 };
@@ -50,10 +52,6 @@ export default {
 
 <style lang="css" scoped>
 
-
-.e-xs{
-  bottom:45%;
-}
 #events-box{
   overflow-wrap: break-word;
 }

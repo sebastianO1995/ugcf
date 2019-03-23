@@ -1,7 +1,7 @@
 <template lang="html">
-  <v-card :class="['navigation-bar', {'overlay ovNav': showSide}]">
+  <v-card height="65px" :class="['navigation-bar', {'overlay ovNav': showSide}]">
     <div class="logo">
-      <router-link :to="{ name: 'Home' }">
+      <router-link to='/'>
         <img id="myLogo" src="@/assets/logo.png" /></router-link>
     </div>
     <!-- Big Screen Begin -->
@@ -52,7 +52,7 @@
             <div v-for="itemDrawer in menuItems" :key="itemDrawer.name">
               <div v-if="!itemDrawer.hasDropdown">
                 <router-link  :to="itemDrawer.link" >
-                  <li class="drawer-li">
+                  <li class="drawer-li" v-on:click="closeNav()">
                     <div class="drawer-item headline">
                       <div class = "drawer-item-icon">
                         <v-icon color="primary darken-4" size="22">{{itemDrawer.icon}}</v-icon>
@@ -75,15 +75,13 @@
                   </div>
                   <ul class="drawer-ul-sub">
                     <router-link v-for="sub in itemDrawer.subMenu" :key="sub.text" :to="sub.link">
-                      <li class="drawer-li-sub subheading">
+                      <li class="drawer-li-sub subheading" v-on:click="closeNav()">
                         {{sub.text}}
                       </li>
                     </router-link>
                   </ul>
                 </li>
               </div>
-
-
             </div>
           </ul>
         </v-card>
@@ -149,16 +147,6 @@ export default {
     window.removeEventListener('resize', this.handleResize);
     document.removeEventListener('click', this.handleClickOutside);
   },
-  mounted() {
-
-
-  },
-  watch:{
-    '$route' (to,from){
-
-
-    }
-  },
   methods: {
     closeNav() {
       // closed the drawer and changes opacity of left side
@@ -199,8 +187,9 @@ export default {
   padding:5px 0px 5px 10px;
 }
 #myLogo{
-  height:50px;
-  width:50px;
+  height:69px;
+  width:57px;
+  padding: 10px 5px 5px 5px;
 }
 
 /*navigation*/
@@ -284,8 +273,6 @@ export default {
 .u-sub .navSubItem:hover{
 background: var(--v-primary-lighten2);
 }
-
-
 
 /*Item Text*/
 .mainList{

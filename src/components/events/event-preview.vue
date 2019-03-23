@@ -15,22 +15,21 @@
             </div>
             <!-- MORE IMAGES -->
             <div v-else class="carousel">
-
             </div>
-
-
           </v-container>
         </v-flex>
         <!-- INFO -->
         <v-flex xs12 sm12 md8>
           <v-container>
-            <v-layout row wrap>
+            <v-layout row wrap class="pb-2">
               <v-flex xs12>
                 <div class="headline left font-weight-medium  primary--text text--darken-4">
                   {{event.title}}
                 </div>
               </v-flex>
-              <v-flex xs12>
+            </v-layout>
+            <v-layout row wrap class="mb-2">
+              <v-flex xs12 sm6>
                 <div :class="['py-1 pl-1 accent--text text--darken-4',
                   {'event-details-xs': $vuetify.breakpoint.xs},
                   {'event-details': $vuetify.breakpoint.smAndUp}] ">
@@ -45,15 +44,11 @@
                   <div class="event-date">
                     <strong>Date:</strong> {{event.date.dayOfWeek}}, {{event.date.month}}
                     {{event.date.day}}, {{event.date.year}}
-
-
                   </div>
                   <!-- Time -->
                   <div class="event-time">
                     <strong>Time:</strong> {{event.time}}
-
                   </div>
-
                   <!-- Location -->
                   <div class="event-location">
                     <strong>Location:</strong>
@@ -63,24 +58,25 @@
                     {{event.location.zip}}
 
                   </div>
-
-
                 </div>
               </v-flex>
-
-
-            </v-layout row>
+              <v-flex xs12 sm6>
+                <div class="title primary--text text--darken-4 pb-1">
+                  About the event
+                </div>
+                <div class="body-2 font-weight-light primary--text text--darken-4">
+                  {{event.summary}}
+                </div>
+              </v-flex>
+            </v-layout>
             <!-- BUTTONS -->
-            <v-layout row wrap>
+            <v-layout row wrap style="margin-left: -13px;">
               <v-flex xs12 sm4>
-                <v-btn color="info" v-on:click="showmore()" :class="{'btn-xs':$vuetify.breakpoint.xs}">
+                <v-btn :to="event.page" color="info" :class="{'btn-xs':$vuetify.breakpoint.xs}">
                   <span class="primary--text text--darken-4 font-weight-bold">
                     More Info
                   </span>
                 </v-btn>
-                <div class="hidden-sm-and-up">
-                  <more-info :moreInfo="moreInfo" :description="event.description"></more-info>
-                </div>
               </v-flex>
               <v-flex xs12 sm4 v-if="event.registration">
                 <v-btn color="success" :class="{'btn-xs':$vuetify.breakpoint.xs}"
@@ -110,39 +106,34 @@
           </v-container>
         </v-flex>
       </v-layout>
-
-
       <!-- More Info -->
-      <div class="hidden-xs-only">
+      <!-- <div class="hidden-xs-only">
         <more-info :moreInfo="moreInfo" :description="event.description"></more-info>
-      </div>
-
-
+      </div> -->
     </v-card>
   </v-container>
 
 </template>
 
 <script>
-import eventMore from '@/components/events/event-more-info.vue';
+import eventMore from '@/components/events/event-more-info';
 
 export default {
   props: ['event'],
-  components:{
+  components: {
     'more-info': eventMore,
   },
   data() {
-    return{
-      moreInfo:false,
-
+    return {
+      moreInfo: false,
     };
   },
-  methods:{
-    showmore(){
+  methods: {
+    showmore() {
       this.moreInfo = !this.moreInfo;
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style lang="css" scoped>

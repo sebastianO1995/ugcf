@@ -1,47 +1,66 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-// eslint-disable-next-line
-import Home from '@/components/home/home.vue';
-// eslint-disable-next-line
-import EventsHome from '@/components/events/events-home.vue';
-// eslint-disable-next-line
-import eventMain from '@/components/events/events-main.vue'
-// eslint-disable-next-line
-import jgmST from '@/components/events/forms/jgm-registration.vue'
 
+import Home from '@/components/home/home-home';
 
-// eslint-disable-next-line
-import Team from '@/components/team/team-main.vue';
-// eslint-disable-next-line
-import Contact from '@/components/contact/contact-main.vue';
-// eslint-disable-next-line
-import Why from '@/components/inspiration/inspiration-main.vue'
+import homeMain from '@/components/home/home-main';
 
+import EventsHome from '@/components/events/events-home';
+
+import eventMain from '@/components/events/events-main';
+
+import jgmST from '@/components/events/forms/jgm-registration';
+import jgmPage from '@/components/events/pages/jgm-tournament';
+import jgmHome from '@/components/events/pages/jgm-home';
+
+import teamMain from '@/components/team/team-main';
+
+import teamHome from '@/components/team/team-home';
+
+import Contact from '@/components/contact/contact-main';
+
+import whyHome from '@/components/inspiration/inspiration-home';
+
+import whyMain from '@/components/inspiration/inspiration-main';
+
+import NotFound from '@/components/not-found';
 
 Vue.use(Router);
 
 export default new Router({
   mode: 'history',
+  scrollBehavior() {
+    return { x: 0, y: 0 };
+  },
   routes: [
     {
       path: '/',
-      name: 'Home',
       component: Home,
+      children: [
+        {
+          path: '',
+          component: homeMain,
+          name: 'Home',
+        },
+      ],
     },
     {
       path: '/who-we-are',
-      name: 'Team',
-      component: Team,
+      component: teamHome,
+      children: [
+        {
+          path: '',
+          component: teamMain,
+          name: 'Team',
+        },
+      ],
     },
     {
       path: '/events',
-      name: 'Events',
       component: EventsHome,
       children: [
-        {path: '', component: eventMain},
-        {path: 'soccer-tournament-registration-form', component: jgmST}
-      ]
-
+        { path: '', component: eventMain, name: 'Events' },
+      ],
     },
     {
       path: '/contact',
@@ -50,8 +69,20 @@ export default new Router({
     },
     {
       path: '/our-inspiration',
-      name: 'Why',
-      component: Why,
+      component: whyHome,
+      children: [
+        { path: '', component: whyMain, name: 'Why' },
+      ],
     },
+    {
+      path: '/jgm-soccer-tournament',
+      component: jgmHome,
+      children: [
+        { path: '', component: jgmPage },
+        { path: 'registration', component: jgmST },
+      ],
+    },
+    { path: '*', component: NotFound },
+
   ],
 });
