@@ -130,7 +130,7 @@ export default {
             this.$refs.form.resetValidation();
             this.validSubmit = true;
           })
-          .catch(error =>
+          .catch(err =>
             /* eslint no-console: "error" */
             console.log(err));
       } else {
