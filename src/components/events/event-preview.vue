@@ -15,10 +15,7 @@
             </div>
             <!-- MORE IMAGES -->
             <div v-else class="carousel">
-
             </div>
-
-
           </v-container>
         </v-flex>
         <!-- INFO -->
@@ -47,15 +44,11 @@
                   <div class="event-date">
                     <strong>Date:</strong> {{event.date.dayOfWeek}}, {{event.date.month}}
                     {{event.date.day}}, {{event.date.year}}
-
-
                   </div>
                   <!-- Time -->
                   <div class="event-time">
                     <strong>Time:</strong> {{event.time}}
-
                   </div>
-
                   <!-- Location -->
                   <div class="event-location">
                     <strong>Location:</strong>
@@ -65,8 +58,6 @@
                     {{event.location.zip}}
 
                   </div>
-
-
                 </div>
               </v-flex>
               <v-flex xs12 sm6>
@@ -77,8 +68,6 @@
                   {{event.summary}}
                 </div>
               </v-flex>
-
-
             </v-layout>
             <!-- BUTTONS -->
             <v-layout row wrap style="margin-left: -13px;">
@@ -117,7 +106,6 @@
           </v-container>
         </v-flex>
       </v-layout>
-
       <!-- More Info -->
       <!-- <div class="hidden-xs-only">
         <more-info :moreInfo="moreInfo" :description="event.description"></more-info>
@@ -128,25 +116,24 @@
 </template>
 
 <script>
-import eventMore from '@/components/events/event-more-info.vue';
+import eventMore from '@/components/events/event-more-info';
 
 export default {
   props: ['event'],
-  components:{
+  components: {
     'more-info': eventMore,
   },
   data() {
-    return{
-      moreInfo:false,
-
+    return {
+      moreInfo: false,
     };
   },
-  methods:{
-    showmore(){
+  methods: {
+    showmore() {
       this.moreInfo = !this.moreInfo;
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style lang="css" scoped>

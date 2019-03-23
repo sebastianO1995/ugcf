@@ -1,4 +1,4 @@
-//This file exports the members information
+// This file exports the members information
 
 export default [
 
@@ -39,8 +39,8 @@ export default [
     firstName: 'Sebastian',
     lastName: 'Orellana',
     position: 'Chief Technology Officer',
-    bio: 'Sebastian Orellana is a recent graduate from Western Connecticut State University with a Bachelor\'s degree in Computer Science and a Bachelor\'s degree in Mathematics. He works as a Web Developer for Western Connecticut State University. His goal is to unlock the potential that technology has in order to bring communities together in an effort to create positive changes to the world.', //@Todo: Finish Bio
-    image: 'Sebastian'
+    bio: 'Sebastian Orellana is a recent graduate from Western Connecticut State University with a Bachelor\'s degree in Computer Science and a Bachelor\'s degree in Mathematics. He works as a Web Developer for Western Connecticut State University. His goal is to unlock the potential that technology has in order to bring communities together in an effort to create positive changes to the world.',
+    image: 'Sebastian',
   },
   {
     id: 5,
@@ -48,7 +48,7 @@ export default [
     lastName: 'Golbazi',
     position: 'Chief Relations Officer',
     bio: 'Arvene Golbazi is a recent graduate from Boston University with a Bachelor\'s degree in [insert degree here]. Arvene has been an active philanthropist from a young age working with Integrated Refugee and Immigrant Services on a variety of community development projects. He has become an extraordinarily influential member of his community with an extensive background in cultural diversity and community service.',
-    image: 'Arvene'
-  }
+    image: 'Arvene',
+  },
 
 ];

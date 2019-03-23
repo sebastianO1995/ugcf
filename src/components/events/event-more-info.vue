@@ -32,8 +32,8 @@
 
 <script>
 export default {
-  props:['moreInfo','description']
-}
+  props: ['moreInfo', 'description'],
+};
 </script>
 
 <style lang="css" scoped>

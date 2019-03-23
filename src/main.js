@@ -7,20 +7,17 @@ import Vue from 'vue';
 import App from './App';
 import router from './router';
 
-import {store} from './store/index.js'
+import { store } from './store/index';
 
 Vue.use(Vuetify, {
   theme: {
-    primary: '#41CEE8', // (65,206,232)
-    secondary: '#BBE1FF', //(187,225,255)
+    primary: '#41CEE8',
+    secondary: '#BBE1FF',
     accent: '#AAE8C8',
     error: '#FF5252',
-    info: '#BEFFFC', //(190,255,252)
+    info: '#BEFFFC',
     success: '#AAE8C8',
     warning: '#FFC107',
-
-    //AAE8C8(170,232,200)
-    //BBFFD2 (187,55,210)
   },
   options: {
     customProperties: true,

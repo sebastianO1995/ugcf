@@ -75,11 +75,11 @@
 export default {
   props: ['member'],
   computed: {
-    name(){
-      return `${this.member.firstName} ${this.member.lastName}`
-    }
-  }
-}
+    name() {
+      return `${this.member.firstName} ${this.member.lastName}`;
+    },
+  },
+};
 </script>
 
 <style lang="css" scoped>

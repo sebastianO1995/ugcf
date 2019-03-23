@@ -29,26 +29,30 @@
       </v-img>
       <v-layout row wrap>
         <v-flex xs12>
-          <div class="title primary--text text--darken-4 font-weight-medium pb-1 pt-3">
+          <div class="title primary--text text--darken-4 font-weight-medium
+          pb-1 pt-3">
             {{event.title}}
           </div>
         </v-flex>
         <v-flex xs12>
-          <div class="card-content caption primary--text text--darken-3 font-weight-light mb-4 mt-2">
+          <div class="card-content caption primary--text text--darken-3
+          font-weight-light mb-4 mt-2">
             {{event.summary}}
           </div>
         </v-flex>
         <v-flex xs12>
           <v-layout row wrap>
             <v-flex xs12 sm6 >
-              <v-btn :to="event.page" color="info" :class="['center', {'btn-xs mb-2':$vuetify.breakpoint.xs}]">
+              <v-btn :to="event.page" color="info" :class="['center',
+              {'btn-xs mb-2':$vuetify.breakpoint.xs}]">
                 <span class="primary--text text--darken-4 font-weight-bold">
                   More Info
                 </span>
               </v-btn>
             </v-flex>
             <v-flex xs12 sm6>
-              <v-btn :to="event.registrationLink" color="success" :class="['center', {'btn-xs':$vuetify.breakpoint.xs}]">
+              <v-btn :to="event.registrationLink" color="success"
+              :class="['center', {'btn-xs':$vuetify.breakpoint.xs}]">
                 <span class="primary--text text--darken-4 font-weight-bold">
                   Register
                 </span>
@@ -62,29 +66,25 @@
 </template>
 
 <script>
-import JGMEvent from'@/components/events/events-list.js';
-export default {
+import JGMEvent from '@/components/events/events-list';
 
-    data () {
-      return {
-        event: JGMEvent[0],
-      }
-    },
+export default {
+  data() {
+    return {
+      event: JGMEvent[0],
+    };
+  },
   methods: {
-    heightC () {
-      if (this.$vuetify.breakpoint.xs){
+    heightC() {
+      if (this.$vuetify.breakpoint.xs) {
         return 'auto';
-      }
-      else if (this.$vuetify.breakpoint.xl){
+      } else if (this.$vuetify.breakpoint.xl) {
         return '510';
+      } else if (this.$vuetify.breakpoint.sm) {
+        return '500';
       }
-      else if (this.$vuetify.breakpoint.sm) {
-        return '500'
-      }
-      else {
-        return '560'
-      }
-    }
+      return '560';
+    },
   },
 };
 </script>

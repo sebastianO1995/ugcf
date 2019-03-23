@@ -1,8 +1,7 @@
-//This file holds stores the event information
+// This file holds stores the event information
 export default [
-  //JGM Soccer Tournament
-
- {
+  // JGM Soccer Tournament
+  {
     id: 0,
     title: 'JGM Memorial Soccer Tournament',
     date: {
@@ -19,7 +18,7 @@ export default [
     },
     time: '8:00am',
     isFree: false,
-    cost:'15.00 per player',
+    cost: '15.00 per player',
     location: {
       name: 'Fred Wolfe Soccer Park',
       street: '300 Hollow Road',
@@ -46,7 +45,7 @@ export default [
         link: 'JGMT-Ball.jpg',
         lazy: '',
         alt: 'image of soccer ball',
-      }
-    ]
+      },
+    ],
   },
 ];

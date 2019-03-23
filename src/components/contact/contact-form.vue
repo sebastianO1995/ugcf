@@ -1,7 +1,6 @@
 <template lang="html">
 <section>
   <v-container>
-
     <v-form @submit.prevent="processForm" ref="form" v-model="valid" lazy-validation>
       <v-layout row wrap>
         <v-flex xs12 sm6 xl4 offset-xl1>
@@ -57,7 +56,6 @@
             :timeout="timeout"
             vertical
               >
-
               <span class="primary--text text--darken-4">
                 <v-icon size="14" color="black" class="pr-2">far fa-check-circle</v-icon>
                 {{success}}</span>
@@ -68,7 +66,6 @@
                 >
                 Close
               </v-btn>
-
             </v-snackbar>
             <v-btn class="primary" type="submit">submit</v-btn>
           </v-container>
@@ -89,69 +86,59 @@
 </template>
 
 <script>
-import db from '@/components/firebaseInit.js'
+import db from '@/components/firebaseInit';
+
 export default {
-  data () {
+  data() {
     return {
       valid: false,
       validSubmit: true,
       snackbar: false,
-      timeout:5000,
+      timeout: 5000,
       success: 'Your message was sent successfully!',
       name: '',
       email: '',
       message: '',
       nameRules: [
         v => !!v || 'Name is required',
-        v => v.length <= 15 || 'Name must be less than 15 characters'
+        v => v.length <= 15 || 'Name must be less than 15 characters',
       ],
       emailRules: [
         v => !!v || 'E-mail is required',
-        v => /.+@.+/.test(v) || 'E-mail must be valid'
+        v => /.+@.+/.test(v) || 'E-mail must be valid',
       ],
       messageRules: [
         v => !!v || 'Message is required',
-        v => v.length >= 10 || 'Message must be greater than 15 characters'
-      ]
-    }
-  },
-  computed: {
-
+        v => v.length >= 10 || 'Message must be greater than 15 characters',
+      ],
+    };
   },
   methods: {
-    processForm: function() {
-      if(this.$refs.form.validate()){
-
-        console.log({ name: this.name, email: this.email, message: this.message });
+    processForm() {
+      if (this.$refs.form.validate()) {
+        // console.log({ name: this.name, email: this.email, message: this.message });
         db.collection('messages').add({
           name: this.name,
           email: this.email,
-          message: this.message
+          message: this.message,
         })
-        .then(docRef => {
-          this.snackbar = true
-          this.name = ''
-          this.message=''
-          this.email = ''
-          this.$refs.form.resetValidation()
-          this.validSubmit = true;
-
-        })
-        .catch(error => console.log(err))
-
-
-      }
-      else{
+          .then((docRef) => {
+            this.snackbar = true;
+            this.name = '';
+            this.message = '';
+            this.email = '';
+            this.$refs.form.resetValidation();
+            this.validSubmit = true;
+          })
+          .catch(error =>
+            /* eslint no-console: "error" */
+            console.log(err));
+      } else {
         this.validSubmit = false;
       }
-
-
-
-
-
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style lang="css" scoped>

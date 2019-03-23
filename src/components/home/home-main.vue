@@ -51,7 +51,7 @@
 </template>
 
 <script>
-import JGMEvent from'@/components/home/feature-card-jgmt.vue';
+import JGMEvent from '@/components/home/feature-card-jgmt';
 
 export default {
   components: {
@@ -68,8 +68,8 @@ export default {
         {
           id: 'vision',
           title: 'Our Vision',
-          text: 'To become a community development network that transcends cultural and geographical boundaries, cultivating a united global community.'
-        }
+          text: 'To become a community development network that transcends cultural and geographical boundaries, cultivating a united global community.',
+        },
       ],
 
     };

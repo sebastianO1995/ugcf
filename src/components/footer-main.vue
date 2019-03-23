@@ -20,13 +20,13 @@ export default {
   data() {
     return {
       footerItems: [
-        {icon: 'fab fa-facebook'},
-        {icon: 'fab fa-twitter'},
-        {icon: 'fab fa-instagram'}
-      ]
-    }
-  }
-}
+        { icon: 'fab fa-facebook' },
+        { icon: 'fab fa-twitter' },
+        { icon: 'fab fa-instagram' },
+      ],
+    };
+  },
+};
 </script>
 
 <style lang="css" scoped>

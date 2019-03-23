@@ -35,17 +35,16 @@
 </template>
 
 <script>
-import eventPreview from '@/components/events/event-preview.vue';
-import events from '@/components/events/events-list.js';
+import eventPreview from '@/components/events/event-preview';
+import events from '@/components/events/events-list';
 
 export default {
-  components:{
+  components: {
     'event-box': eventPreview,
   },
-  data () {
-    return{
+  data() {
+    return {
       eventStore: events,
-
     };
   },
 };

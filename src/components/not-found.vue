@@ -7,11 +7,9 @@
           {'title': $vuetify.breakpoint.smAndDown}]">
             Page Not Found
           </div>
-
         </v-flex>
       </v-layout>
         <v-divider class="my-2"></v-divider>
-
         <v-btn to="/" class="primary">Go Home</v-btn>
     </v-container>
   </div>
@@ -20,7 +18,7 @@
 
 <script>
 export default {
-}
+};
 </script>
 
 <style lang="css" scoped>

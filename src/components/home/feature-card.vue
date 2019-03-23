@@ -69,18 +69,17 @@
 <script>
 export default {
   methods: {
-    heightC () {
-      if (this.$vuetify.breakpoint.xs){
+    heightC() {
+      if (this.$vuetify.breakpoint.xs) {
         return 'auto';
       }
-      else if (this.$vuetify.breakpoint.xl){
+      else if (this.$vuetify.breakpoint.xl) {
         return '510';
       }
       else if (this.$vuetify.breakpoint.sm) {
-        return '500'
-      }
-      else {
-        return '560'
+        return '500';
+      } else {
+        return '560';
       }
     }
   },

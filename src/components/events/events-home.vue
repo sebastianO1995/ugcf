@@ -35,18 +35,15 @@
 
 <script>
 export default {
-  methods:{
-    posCalc(){
-      if(this.$vuetify.breakpoint.mdAndUp){
-        return 'center 5%'
+  methods: {
+    posCalc() {
+      if (this.$vuetify.breakpoint.mdAndUp) {
+        return 'center 5%';
       }
-      else if (this.$vuetify.breakpoint.smAndDown) {
-        return 'center center'
-
-      }
-    }
-  }
-}
+      return 'center center';
+    },
+  },
+};
 </script>
 
 <style lang="css" scoped>

@@ -25,8 +25,18 @@
             <v-container>
               <v-layout row wrap class="hidden-xs-only">
                 <v-flex sm8 offset-sm2>
-                  <div :class="['title ', {'body-2': $vuetify.breakpoint.smAndDown}]" style="line-height: 1.2 !important">
-                  Dedicated to the betterment of community and self, the UGC team prides itself on its passion and determination to succeed. Each member, a leader in his/her own right, has extensive knowledge and experience in the different facets of what makes a successful organization. Chosen based on their individual merits, they come together to form a diverse group of global citizens from all walks of life, with one common goal: to plant trees under whose shade they will never sit.
+                  <div :class="['title ',
+                   {'body-2': $vuetify.breakpoint.smAndDown}]"
+                   style="line-height: 1.2 !important">
+                  Dedicated to the betterment of community and self,
+                  the UGC team prides itself on its passion and determination
+                  to succeed. Each member, a leader in his/her own right,
+                  has extensive knowledge and experience in the different
+                  facets of what makes a successful organization.
+                  Chosen based on their individual merits, they come
+                  together to form a diverse group of global citizens
+                  from all walks of life, with one common goal: to plant
+                   trees under whose shade they will never sit.
                   </div>
                 </v-flex>
               </v-layout>
@@ -46,18 +56,15 @@
 
 <script>
 export default {
-  methods:{
-    posCalc(){
-      if(this.$vuetify.breakpoint.mdAndUp){
-        return 'center 5%'
+  methods: {
+    posCalc() {
+      if (this.$vuetify.breakpoint.mdAndUp) {
+        return 'center 5%';
       }
-      else if (this.$vuetify.breakpoint.smAndDown) {
-        return 'center center'
-
-      }
-    }
-  }
-}
+      return 'center center';
+    },
+  },
+};
 </script>
 
 <style lang="css" scoped>

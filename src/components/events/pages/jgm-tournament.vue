@@ -11,7 +11,6 @@
         </div>
         <!-- MORE IMAGES -->
         <div v-else class="carousel">
-
         </div>
       </v-flex>
       <v-flex xs12 sm6>
@@ -33,7 +32,6 @@
                       {{event.date.dayOfWeek}}, {{event.date.month}}
                       {{event.date.day}}, {{event.date.year}}
                       <br />
-
                     </div>
                     <!-- Time -->
                     <div class="event-time">
@@ -53,10 +51,8 @@
                         <span v-if="!event.isFree">${{event.cost}}<br />
                           Includes: T-shirt, Lunch, and Refreshments</span>
                         <span v-else>Free</span>
-
                       </div>
                   </v-flex>
-
                 </v-layout>
 
                   <br/>
@@ -126,15 +122,15 @@
 </template>
 
 <script>
-import JGMEvent from'@/components/events/events-list.js';
+import JGMEvent from '@/components/events/events-list';
+
 export default {
-  data () {
+  data() {
     return {
       event: JGMEvent[0],
-    }
-  }
-
-}
+    };
+  },
+};
 </script>
 
 <style lang="css" scoped>

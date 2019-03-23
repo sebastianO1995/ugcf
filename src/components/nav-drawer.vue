@@ -147,16 +147,6 @@ export default {
     window.removeEventListener('resize', this.handleResize);
     document.removeEventListener('click', this.handleClickOutside);
   },
-  mounted() {
-
-
-  },
-  watch:{
-    '$route' (to,from){
-
-
-    }
-  },
   methods: {
     closeNav() {
       // closed the drawer and changes opacity of left side
@@ -283,8 +273,6 @@ export default {
 .u-sub .navSubItem:hover{
 background: var(--v-primary-lighten2);
 }
-
-
 
 /*Item Text*/
 .mainList{
