@@ -64,7 +64,7 @@
               </div>
               <div v-else>
                 <li class="drawer-li">
-                  <div class="drawer-item headline">
+                  <div class="drawer-item-2 headline">
                     <div class = "drawer-item-icon">
                       <v-icon color="primary darken-4" size="22">{{itemDrawer.icon}}</v-icon>
                     </div>
@@ -115,7 +115,7 @@ export default {
               isActive: false,
             },
             {
-              text: 'Who we are',
+              text: 'Who We Are',
               link: '/who-we-are',
               isActive: false,
             },
@@ -337,18 +337,14 @@ text-decoration: none;
 color: var(--v-primary-darken4);
 
 }
-.drawer-item, .drawer-li-sub{
+.drawer-item, .drawer-li-sub, .drawer-item-2{
   font-weight: 300;
-}
-.drawer-ul-main a:hover{
-
-background-color: red;
 }
 
 .drawer-li{
   list-style: none;
 }
-.drawer-item{
+.drawer-item, .drawer-item-2{
 padding: 10px 0px 12px 60px;
 position:relative;
 }
