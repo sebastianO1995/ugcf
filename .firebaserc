@@ -1,12 +1,9 @@
 {
   "projects": {
-<<<<<<< HEAD
     "default": "unified-global-connections",
     "staging": "ugcf-2"
   }
 }
 =======
-    "default": "unified-global-connections"
-  }
-}
->>>>>>> origin
+>>>>>>> 09fe1abcba34d234c058fded17af1f75330161a4
+>>>>>>> 4f62e6640d0133cf659e2c68c874b7e8c171dcae
