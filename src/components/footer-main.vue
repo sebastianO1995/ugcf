@@ -31,7 +31,7 @@
                   <div class="subheading secondary--text text--lighten-2 mt-4">
                     Orange, CT 06477<br/>
 
-                    (203)-942-7147<br/>
+                    (203)-927-7147<br/>
 
                       <a href="mailto:unifiedglobalconnections@gmail.com"
                         class="secondary--text text--lighten-2 linka">
@@ -63,7 +63,7 @@
         </v-layout>
       </v-flex>
       <v-flex py-3 white--text xs12 class= "primary darken-4">
-        <span class="white--text" >&copy; 2019 Unitied Global Connections
+        <span class="white--text" >&copy; 2019 Unified Global Connections
           </span>
       </v-flex>
   </v-layout>

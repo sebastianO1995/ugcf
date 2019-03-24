@@ -115,7 +115,7 @@ export default {
               isActive: false,
             },
             {
-              text: 'Who we are',
+              text: 'Who We Are',
               link: '/who-we-are',
               isActive: false,
             },
