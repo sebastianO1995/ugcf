@@ -7,7 +7,7 @@
             {'hh-md': $vuetify.breakpoint.mdAndUp},
             {'hh-sm': $vuetify.breakpoint.smAndDown}]"
 
-            gradient="to bottom left, rgba(187,225,255,.33), rgba(0,0,0,.8)"
+            gradient="to bottom right, rgba(187,225,255,.33), rgba(0,0,0,.8)"
 
             :position="posCalc()">
 

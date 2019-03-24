@@ -95,7 +95,7 @@
                     </div>
                   </v-flex>
                   <v-flex xs12>
-                    <v-btn flat icon color="primary darken-2"
+                    <v-btn flat icon color="primary darken-2" :href="social.link"
                       v-for="social in event.socials" :key="social.item">
                       <v-icon size= "24px">{{social.icon}}</v-icon>
                     </v-btn>

@@ -3,14 +3,14 @@
     <section class="card-content">
       <v-layout row wrap>
         <v-flex xs12>
-          <v-card id="our-inspiration" class="main-card ontop">
+          <v-card id="our-inspiration" class="main-card ontop"
+            style="padding-top:0px !important">
             <v-container>
-
               <v-layout row wrap>
                 <v-flex xs12>
                   <div :class="['title font-weight-medium primary--text text--darken-4',
                     {'body-2': $vuetify.breakpoint.smAndDown}]"
-                    style="line-height:1.5 !important; text-align: justify">
+                    style="line-height:1.5 !important;">
                       <span class="pl-5">The</span>
                       Unified Global Connections Foundation was established to help build
                        meaningful connections between people of different

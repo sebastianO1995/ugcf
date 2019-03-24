@@ -131,7 +131,7 @@
             <div class="title primary--text text--darken-4 pb-1">
               Social Media Links
             </div>
-            <v-btn flat icon color="primary darken-2"
+            <v-btn flat icon color="primary darken-2" :href="social.link"
               v-for="social in event.socials" :key="social.item">
               <v-icon size= "30px">{{social.icon}}</v-icon>
             </v-btn>

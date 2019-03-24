@@ -37,7 +37,7 @@ export default [
       {
         item: 'facebook',
         icon: 'fab fa-facebook',
-        link: '',
+        link: 'https://www.facebook.com/events/2340865522850102',
       },
     ],
     images: [

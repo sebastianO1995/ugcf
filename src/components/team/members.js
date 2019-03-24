@@ -47,7 +47,7 @@ export default [
     firstName: 'Arvene',
     lastName: 'Golbazi',
     position: 'Chief Relations Officer',
-    bio: 'Arvene Golbazi is a recent graduate from Boston University with a Bachelor\'s degree in [insert degree here]. Arvene has been an active philanthropist from a young age working with Integrated Refugee and Immigrant Services on a variety of community development projects. He has become an extraordinarily influential member of his community with an extensive background in cultural diversity and community service.',
+    bio: 'Arvene Golbazi is a recent graduate from Boston University with a Bachelor of Arts in Biology and a minor in Statistics. Arvene has been an active philanthropist from a young age working with Integrated Refugee and Immigrant Services on a variety of community development projects. He has become an extraordinarily influential member of his community with an extensive background in cultural diversity and community service.',
     image: 'Arvene',
   },
 
