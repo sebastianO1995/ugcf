@@ -20,7 +20,7 @@
               {'display-3': $vuetify.breakpoint.md || $vuetify.breakpoint.lg},
               {'display-4': $vuetify.breakpoint.xl}]"
               >
-              Who we are
+              Who We Are
             </p>
             <v-container>
               <v-layout row wrap class="hidden-xs-only">

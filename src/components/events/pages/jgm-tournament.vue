@@ -48,8 +48,10 @@
                     </div>
                       <!-- Cost -->
                       <div class="event-cost">
-                        <span v-if="!event.isFree">${{event.cost}}<br />
-                          Includes: T-shirt, Lunch, and Refreshments</span>
+                        <span v-if="!event.isFree">${{event.cost}} <br />
+                          Includes: T-shirt, Lunch, and Water.<br/>
+                          Concessions will be available.
+                        </span>
                         <span v-else>Free</span>
                       </div>
                   </v-flex>
@@ -107,10 +109,29 @@
       <v-flex xs12 sm8 offset-sm2>
         <v-container>
           <div>
+            <div class="title primary--text text--darken-4 pb-2">
+              Photo Gallery
+            </div>
+            <v-carousel :height="getHeight()">
+              <v-carousel-item
+                v-for="(item,i) in event.gallery"
+                :key="i"
+                :src="require(`@/assets/JGM-Soccer/${item.link}`)"
+                ></v-carousel-item>
+            </v-carousel>
+          </div>
+        </v-container>
+      </v-flex>
+    </v-layout>
+    <v-divider class="my-3"></v-divider>
+    <v-layout row wrap>
+      <v-flex xs12 sm8 offset-sm2>
+        <v-container>
+          <div>
             <div class="title primary--text text--darken-4 pb-1">
               Social Media Links
             </div>
-            <v-btn flat icon color="primary darken-2"
+            <v-btn flat icon color="primary darken-2" :href="social.link"
               v-for="social in event.socials" :key="social.item">
               <v-icon size= "30px">{{social.icon}}</v-icon>
             </v-btn>
@@ -129,6 +150,14 @@ export default {
     return {
       event: JGMEvent[0],
     };
+  },
+  methods: {
+    getHeight() {
+      if (this.$vuetify.breakpoint.smAndDown) {
+        return '200';
+      }
+      return '500';
+    },
   },
 };
 </script>

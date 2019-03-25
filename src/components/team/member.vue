@@ -2,15 +2,16 @@
   <v-card class="elevation-8">
     <v-container>
       <v-layout row wrap v-if="member.id %2 === 0 || $vuetify.breakpoint.xs">
-        <v-flex xs12 sm4 md4>
+        <v-flex xs12 sm4 md4 lg3>
           <v-container>
             <v-img :src="require(`@/assets/team/square-original/${member.image}-300x300.jpg`)"
              class="bk-img elevation-8"
-
+             :width="size()"
+             :height="size()"
              ></v-img>
           </v-container>
         </v-flex>
-        <v-flex xs12 sm8 md8>
+        <v-flex xs12 sm8 md8 lg9>
           <v-container>
             <v-layout row wrap>
               <v-flex xs12>
@@ -35,7 +36,7 @@
       </v-layout>
 
       <v-layout v-else row wrap>
-        <v-flex xs12 sm8 md8>
+        <v-flex xs12 sm8 md8 lg9>
           <v-container>
             <v-layout row wrap>
               <v-flex xs12>
@@ -58,10 +59,12 @@
             </v-layout>
           </v-container>
         </v-flex>
-        <v-flex xs12 sm4 md4>
+        <v-flex xs12 sm4 md4 lg3>
           <v-container>
             <v-img :src="require(`@/assets/team/square-original/${member.image}-300x300.jpg`)"
              class="bk-img elevation-8"
+             :width="size()"
+             :height="size()"
              ></v-img>
           </v-container>
         </v-flex>
@@ -77,6 +80,14 @@ export default {
   computed: {
     name() {
       return `${this.member.firstName} ${this.member.lastName}`;
+    },
+  },
+  methods: {
+    size() {
+      if (this.$vuetify.breakpoint.smAndDown) {
+        return '';
+      }
+      return '200';
     },
   },
 };
