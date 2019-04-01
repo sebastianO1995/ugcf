@@ -1,7 +1,8 @@
 <template lang="html">
 <section>
   <v-container>
-    <v-form @submit.prevent="processForm" ref="form" v-model="valid" lazy-validation>
+    <v-form @submit.prevent="processForm" ref="form" v-model="valid"
+     lazy-validation>
       <v-layout row wrap>
         <v-flex xs12 sm6 xl4 offset-xl1>
           <v-container>
@@ -86,7 +87,7 @@
 </template>
 
 <script>
-import db from '@/components/firebaseInit';
+import fb from '@/components/firebaseInit';
 
 export default {
   data() {
@@ -115,12 +116,14 @@ export default {
   },
   methods: {
     processForm() {
+      const ts = new Date();
       if (this.$refs.form.validate()) {
         // console.log({ name: this.name, email: this.email, message: this.message });
-        db.collection('messages').add({
+        fb.collection('messages').add({
           name: this.name,
           email: this.email,
           message: this.message,
+          date: ts, // sends the time stamp of the creation of the message.
         })
           .then((docRef) => {
             this.snackbar = true;
