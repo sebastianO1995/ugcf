@@ -88,6 +88,7 @@
 
 <script>
 import fb from '@/components/firebaseInit';
+import axios from 'axios';
 
 export default {
   data() {
@@ -116,29 +117,44 @@ export default {
   },
   methods: {
     processForm() {
-      const ts = new Date();
-      if (this.$refs.form.validate()) {
-        // console.log({ name: this.name, email: this.email, message: this.message });
-        fb.collection('messages').add({
-          name: this.name,
-          email: this.email,
-          message: this.message,
-          date: ts, // sends the time stamp of the creation of the message.
+      this.sendFormData();
+      // const ts = new Date();
+      // if (this.$refs.form.validate()) {
+      //   // console.log({ name: this.name, email: this.email, message: this.message });
+      //   fb.collection('messages').add({
+      //     name: this.name,
+      //     email: this.email,
+      //     message: this.message,
+      //     date: ts, // sends the time stamp of the creation of the message.
+      //   })
+      //     .then((docRef) => {
+      //       this.snackbar = true;
+      //       this.sendFormData();
+      //       this.name = '';
+      //       this.message = '';
+      //       this.email = '';
+      //       this.$refs.form.resetValidation();
+      //       this.validSubmit = true;
+      //     })
+      //     .catch(err =>
+      //       /* eslint no-console: "error" */
+      //       console.log(err));
+      // } else {
+      //   this.validSubmit = false;
+      // }
+    },
+    // sendFormData(name, email, message, date) {
+    sendFormData() {
+      axios.post('https://us-central1-ugcf-2.cloudfunctions.net/sendEmail', {
+        to: 'p.sebastianorellana@gmail.com',
+        from: 'p.sebastianorellana@gmail.com',
+        subject: 'Test Email',
+        content: 'Hello World',
+        headers: {'Access-Control-Allow-Origin': '*'}
+      }).then((response) => { console.log("Success")})
+        .catch((e)=>{
+          console.error(e)
         })
-          .then((docRef) => {
-            this.snackbar = true;
-            this.name = '';
-            this.message = '';
-            this.email = '';
-            this.$refs.form.resetValidation();
-            this.validSubmit = true;
-          })
-          .catch(err =>
-            /* eslint no-console: "error" */
-            console.log(err));
-      } else {
-        this.validSubmit = false;
-      }
     },
   },
 };

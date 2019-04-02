@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "unified-global-connections"
+    "default": "unified-global-connections",
+    "staging": "ugcf-2"
   }
 }

@@ -9,6 +9,11 @@ import router from './router';
 
 import { store } from './store/index';
 
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+
+Vue.use(VueAxios, axios)
+
 Vue.use(Vuetify, {
   theme: {
     primary: '#41CEE8',
