@@ -145,16 +145,17 @@ export default {
     },
     // sendFormData(name, email, message, date) {
     sendFormData() {
-      axios.post('https://us-central1-ugcf-2.cloudfunctions.net/sendEmail', {
-        to: 'p.sebastianorellana@gmail.com',
-        from: 'p.sebastianorellana@gmail.com',
-        subject: 'Test Email',
-        content: 'Hello World',
-        headers: {'Access-Control-Allow-Origin': '*'}
-      }).then((response) => { console.log("Success")})
+      axios.post('http://localhost:3000/send', {
+        name: this.name,
+        email: this.email,
+        message: this.message,
+
+      }).then((response) => {
+            console.log("Success");
+    })
         .catch((e)=>{
-          console.error(e)
-        })
+          console.error('New Error: ' + e);
+        });
     },
   },
 };
