@@ -198,7 +198,7 @@ export default {
       }
     },
     sendFormData(recaptchaToken) {
-      axios.post('http://localhost:3000/send', {
+      axios.post('http://ugcf.us-east-2.elasticbeanstalk.com/send', {
         name: this.name,
         email: this.email,
         message: this.message,
