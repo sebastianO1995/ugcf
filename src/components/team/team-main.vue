@@ -3,11 +3,11 @@
     <section id="team-box" class="card-content">
       <v-card class="main-card ontop elevation-2">
         <v-container>
-          <v-layout row wrap class="hidden-sm-and-up">
+          <v-layout row wrap>
             <v-container>
               <v-flex xs12>
-                <div :class="['title primary--text text--darken-4 nm font-weight-light',
-                {'body-2': $vuetify.breakpoint.smAndDown}]" style="line-height: 1.2 !important">
+                <div :class="['caption primary--text text--darken-4 nm font-weight-light',
+                {'caption': $vuetify.breakpoint.smAndDown}]" style="line-height: 1.2 !important">
                 Dedicated to the betterment of community and self,
                 the UGC team prides itself on its passion and determination
                 to succeed. Each member, a leader in his/her own right,
