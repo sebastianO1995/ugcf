@@ -15,7 +15,7 @@ export default [
     firstName: 'Lisa',
     lastName: 'Durkee',
     position: 'Chief Operating Officer',
-    bio: 'Lisa Durkee is a production coordinator who works with media and theater producers and directors pulling together the ‘puzzle’ pieces of their projects. Lisa is trained and certified in broadcasting, general communications and media operations with extensive experience in organizational management.',
+    bio: 'Lisa Durkee has worked in Organizational Management for over 20 years and Media Production for 12 years. She has led groups ranging in size as intimate as 10, to as variant as 200. She is highly trained in Media Communications & Operations. She has cast, managed and produced multiple films, radio shows, and stage productions while additionally having managed two independent dancers/actors for the past decade.',
     image: 'Lisa',
   },
   {
