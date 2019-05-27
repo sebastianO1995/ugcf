@@ -1,5 +1,5 @@
 <template>
-  <a href="https://www.paypal.com/donate?token=FgAh3d23XKn_PmJ1khMzp691yBLlDHNQ8W1WRBlhmA68Ia5cosKE-vrVv8cAKnexKrnUEG&country.x=US&locale.x=US">
+  <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QEVTKN8K2D33S&source=url">
   <div class="headline">
     <div class="drw-donate ">
       Donate
