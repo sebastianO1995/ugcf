@@ -6,7 +6,7 @@
           <v-layout row wrap>
             <v-container>
               <v-flex xs12>
-                <div :class="['caption primary--text text--darken-4 nm font-weight-light',
+                <div :class="['body-1 primary--text text--darken-4 nm font-weight-light',
                 {'caption': $vuetify.breakpoint.smAndDown}]" style="line-height: 1.2 !important">
                 Dedicated to the betterment of community and self,
                 the UGC team prides itself on its passion and determination
