@@ -48,14 +48,8 @@
                       class="mx-3" dark icon>
                         <v-icon size= "30px">{{item.icon}}</v-icon>
                     </v-btn>
+                    <paypal></paypal>
 
-                  <v-btn href="https://venmo.com/UGCFoundation" icon>
-                    <v-img :src="require(`@/assets/venmo.png`)"
-                      height= '30'
-                      width= '30'
-                      :aspect-ratio="16/9"
-                      class="primary darken-1 center"></v-img>
-                  </v-btn>
                 </v-flex>
               </v-layout>
             </v-container>
@@ -71,7 +65,11 @@
 </template>
 
 <script>
+import paypal from '@/components/paypal/paypal.vue'
 export default {
+  components: {
+    'paypal': paypal,
+  },
   data() {
     return {
       footerItems: [
