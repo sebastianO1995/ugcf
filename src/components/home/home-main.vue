@@ -3,21 +3,37 @@
     <section id="mission-vision-box" class="card-content">
       <v-layout row wrap>
         <v-flex xs12>
-          <v-card v-for= "item in about" :key= "item.id" :id="item.id"
-           :class="['main-card ontop elevation-5', {'mt-3': item.id === 'vision'} ]">
+          <v-card
+            v-for="item in about"
+            :key="item.id"
+            :id="item.id"
+            :class="[
+              'main-card ontop elevation-5',
+              { 'mt-3': item.id === 'vision' }
+            ]"
+          >
             <v-container>
-              <div :class="['center font-weight-medium accent--text text--darken-4 pb-2',
-              { 'display-2': $vuetify.breakpoint.smAndUp },
-              { 'headline' : $vuetify.breakpoint.xs }]">
-                ~ {{item.title}} ~
+              <div
+                :class="[
+                  'center font-weight-medium accent--text text--darken-4 pb-2',
+                  { 'display-2': $vuetify.breakpoint.smAndUp },
+                  { headline: $vuetify.breakpoint.xs }
+                ]"
+              >
+                ~ {{ item.title }} ~
                 <br />
-                <hr class="style-two mt-3">
+                <hr class="style-two mt-3" />
               </div>
-              <div :class="['center mt-4 font-weight-light primary--text text--darken-4',
-              { 'headline px-4' : $vuetify.breakpoint.smAndUp },
-              { 'subheading font-weight-medium px-2' : $vuetify.breakpoint.xs }]">
-                {{item.text}}
-
+              <div
+                :class="[
+                  'center mt-4 font-weight-light primary--text text--darken-4',
+                  { 'headline px-4': $vuetify.breakpoint.smAndUp },
+                  {
+                    'subheading font-weight-medium px-2': $vuetify.breakpoint.xs
+                  }
+                ]"
+              >
+                {{ item.text }}
               </div>
             </v-container>
           </v-card>
@@ -25,13 +41,17 @@
       </v-layout>
     </section>
 
-    <hr class="style-two"/>
+    <hr class="style-two" />
 
-    <section id="featured">
+    <section id="featured" style="display:none">
       <v-container>
-        <div :class="['accent--text text--darken-4',
-          { 'display-2 mt-4': $vuetify.breakpoint.smAndUp },
-          { 'headline mt-3 center' : $vuetify.breakpoint.xs }]">
+        <div
+          :class="[
+            'accent--text text--darken-4',
+            { 'display-2 mt-4': $vuetify.breakpoint.smAndUp },
+            { 'headline mt-3 center': $vuetify.breakpoint.xs }
+          ]"
+        >
           Featured Content
         </div>
         <div>
@@ -39,7 +59,7 @@
             <v-layout row wrap>
               <v-flex xs12 sm12 md6 lg4>
                 <!-- @ToDo: link buttons, decide where more info goes /create dynamic card -->
-                <v-container><feature-card-jgmt></feature-card-jgmt></v-container>
+                <v-container></v-container>
               </v-flex>
             </v-layout>
           </v-container>
@@ -47,7 +67,6 @@
       </v-container>
     </section>
   </div>
-
 </template>
 
 <script>
@@ -79,5 +98,4 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
 </style>

@@ -10,9 +10,9 @@
               </div>
               <hr class="style-eight mt-3" />
               <div class="mt-4">
-                <div v-for= "event in eventStore" :key="event.id">
-                  <event-box :event="event"></event-box>
-                </div>
+                 <div class="mt-4 headline center">
+                No Upcoming Events
+              </div>
               </div>
             </v-container>
           </v-card>
@@ -35,25 +35,21 @@
 </template>
 
 <script>
-import eventPreview from '@/components/events/event-preview';
-import events from '@/components/events/events-list';
 
 export default {
   components: {
-    'event-box': eventPreview,
+
   },
   data() {
     return {
-      eventStore: events,
+
     };
   },
 };
 </script>
 
 <style lang="css" scoped>
-
-#events-box{
+#events-box {
   overflow-wrap: break-word;
 }
-
 </style>
