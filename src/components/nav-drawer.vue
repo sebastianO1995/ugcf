@@ -35,6 +35,11 @@
             </li>
             </router-link>
           <!-- Menu Item End -->
+          <li class="li-main">
+
+              <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QEVTKN8K2D33S&source=url" class="donate">Donate</a>
+
+          </li>
         </ul>
       </nav>
     <!-- Big Screen End-->
@@ -84,6 +89,7 @@
               </div>
             </div>
           </ul>
+          <donate></donate>
         </v-card>
       </v-slide-x-reverse-transition>
     </nav>
@@ -93,7 +99,13 @@
 </template>
 
 <script>
+import donate from '@/components/paypal/paypalBtn.vue';
+import paypal from '@/components/paypal/paypal.vue';
 export default {
+  components: {
+    'donate': donate,
+    'paypal': paypal,
+  },
   data() {
     return {
       menuItems: [
@@ -168,7 +180,7 @@ export default {
     },
     handleResize() {
       // show drawer for small screen
-      if (window.innerWidth < 728) {
+      if (window.innerWidth < 800) {
         this.notSmall = false;
       } else {
         this.notSmall = true;
@@ -220,7 +232,7 @@ export default {
 .u-main a {
   padding: 29px 0px 20px 0px;
   color: var(--v-primary-lighten4);
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 400;
   padding-right: 20px;
 }
@@ -382,4 +394,13 @@ export default {
 .drawer-ul-main .router-link-exact-active .drawer-li-sub {
   font-weight: 500;
 }
+
+.donate{
+background:var(--v-secondary-lighten3) !important;
+padding:8px 20px 8px 20px !important;
+margin-top:5px;
+color:var(--v-primary-darken3) !important;
+font-weight: 600 !important;
+}
+
 </style>

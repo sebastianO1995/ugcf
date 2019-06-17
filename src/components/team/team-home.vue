@@ -22,11 +22,10 @@
               >
               Who We Are
             </p>
-            <v-container>
+            <!-- <v-container>
               <v-layout row wrap class="hidden-xs-only">
                 <v-flex sm8 offset-sm2>
-                  <div :class="['title ',
-                   {'body-2': $vuetify.breakpoint.smAndDown}]"
+                  <div class="caption"
                    style="line-height: 1.2 !important">
                   Dedicated to the betterment of community and self,
                   the UGC team prides itself on its passion and determination
@@ -41,7 +40,7 @@
                 </v-flex>
               </v-layout>
 
-            </v-container>
+            </v-container> -->
 
 
           </v-flex>
