@@ -109,11 +109,11 @@ export default {
           hasDropdown: true,
           link: '',
           subMenu: [
-            {
-              text: 'Our Inspiration',
-              link: '/our-inspiration',
-              isActive: false,
-            },
+            // {
+            //   text: 'Our Inspiration',
+            //   link: '/our-inspiration',
+            //   isActive: false,
+            // },
             {
               text: 'Who We Are',
               link: '/who-we-are',
@@ -181,133 +181,134 @@ export default {
 
 <style lang="css" scoped="">
 /*LOGO*/
-.logo{
+.logo {
   text-align: left;
-  width:10%;
-  padding:5px 0px 5px 10px;
+  width: 10%;
+  padding: 5px 0px 5px 10px;
 }
-#myLogo{
-  height:69px;
-  width:57px;
+#myLogo {
+  height: 69px;
+  width: 57px;
   padding: 10px 5px 5px 5px;
 }
 
 /*navigation*/
-.navigation-bar{
+.navigation-bar {
   position: fixed;
   top: 0;
   z-index: 2;
-  width:100%;
+  width: 100%;
   background-color: var(--v-primary-darken1);
-  height:auto;
+  height: auto;
   padding: 0px 10px 0px 10px;
-  margin-bottom:10px;
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
 }
 
-.navBig, .navSmall{
-  width:90%;
-  text-align:right;
+.navBig,
+.navSmall {
+  width: 90%;
+  text-align: right;
 }
-.li-main{
-  display:inline-block;
+.li-main {
+  display: inline-block;
   margin: 0.5em;
-  position:relative;
-  text-align:left;
+  position: relative;
+  text-align: left;
 }
-.u-main a{
+.u-main a {
   padding: 29px 0px 20px 0px;
   color: var(--v-primary-lighten4);
   font-size: 22px;
   font-weight: 400;
-  padding-right:20px;
+  padding-right: 20px;
 }
-.u-main a:hover{
+.u-main a:hover {
   background-color: #fff;
   color: var(--v-primary-darken4);
 }
-.u-main a:hover .arrow-down{
+.u-main a:hover .arrow-down {
   color: var(--v-primary-darken4);
 }
-.arrow-down{
+.arrow-down {
   color: var(--v-primary-lighten4);
 }
-.li-main a{
+.li-main a {
   text-decoration: none;
 }
-.li-sub{
+.li-sub {
   list-style: none;
 }
 
-.li-sub:hover{
+.li-sub:hover {
   background: red;
 }
 
 /*Drop Down*/
 
-.u-main a:hover .u-sub{display:block}
-.u-sub{
-  display:none;
-  position:absolute;
-  top:16px;
-  left:-11px;
+.u-main a:hover .u-sub {
+  display: block;
+}
+.u-sub {
+  display: none;
+  position: absolute;
+  top: 16px;
+  left: -11px;
   background-color: #fff;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  padding-left:0px;
-  width:180px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding-left: 0px;
+  width: 180px;
   border-top: 2px solid var(--v-primary-darken4);
-
 }
 
-.u-sub .navSubItem{
+.u-sub .navSubItem {
   padding: 8px 14px 8px 0px;
   text-decoration: none;
   display: block;
-  width:100%;
+  width: 100%;
   text-align: left;
   padding-left: 10px;
-  font-size:16px;
+  font-size: 16px;
   color: var(--v-primary-darken4);
 }
-.u-sub .navSubItem:hover{
-background: var(--v-primary-lighten2);
+.u-sub .navSubItem:hover {
+  background: var(--v-primary-lighten2);
 }
 
 /*Item Text*/
-.mainList{
+.mainList {
   font-size: 22px;
   border-right: 1px solid black;
   font-weight: 400;
-  padding-right:20px;
+  padding-right: 20px;
 }
-.router-link-exact-active{
-text-decoration: underline;
+.router-link-exact-active {
+  text-decoration: underline;
 }
 
 /*Drawer*/
-.hamburger{
-  font-size:40px;
+.hamburger {
+  font-size: 40px;
   color: var(--v-primary-lighten4);
-  float:right;
-  margin-right:10px;
+  float: right;
+  margin-right: 10px;
 }
-.hamburger:hover{
+.hamburger:hover {
   cursor: pointer;
   color: var(--v-primary-darken4);
-
 }
-.drawerOpen{
+.drawerOpen {
   height: 100%; /* 100% Full-height */
-  font-size:35px;
-  text-align:left;
-  width:300px;
+  font-size: 35px;
+  text-align: left;
+  width: 300px;
   position: fixed; /* Stay in place */
   z-index: 5; /* Stay on top */
   top: 0; /* Stay at the top */
   right: 0;
-  left:auto;
-  max-width:100%;
+  left: auto;
+  max-width: 100%;
   background-color: white;
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 60px; /* Place content 60px from the top */
@@ -321,64 +322,64 @@ text-decoration: underline;
   top: 0;
   left: 2%;
   font-size: 36px;
-  max-width:100%;
+  max-width: 100%;
 }
 
-.closebtn:hover{
+.closebtn:hover {
   color: var(--v-primary-darken3);
   transform: scale(1.2);
 }
 /*Drawer Menu*/
-.drawer-ul-main{
-  padding:0px;
+.drawer-ul-main {
+  padding: 0px;
 }
-.drawer-ul-main a{
-text-decoration: none;
-color: var(--v-primary-darken4);
-
+.drawer-ul-main a {
+  text-decoration: none;
+  color: var(--v-primary-darken4);
 }
-.drawer-item, .drawer-li-sub, .drawer-item-2{
+.drawer-item,
+.drawer-li-sub,
+.drawer-item-2 {
   font-weight: 300;
 }
 
-.drawer-li{
+.drawer-li {
   list-style: none;
 }
-.drawer-item, .drawer-item-2{
-padding: 10px 0px 12px 60px;
-position:relative;
+.drawer-item,
+.drawer-item-2 {
+  padding: 10px 0px 12px 60px;
+  position: relative;
 }
-.drawer-about{
+.drawer-about {
   color: var(--v-primary-darken4);
 }
 
-.drawer-ul-sub{
-padding-left: 0px;
+.drawer-ul-sub {
+  padding-left: 0px;
 }
-.drawer-li-sub{
+.drawer-li-sub {
   padding: 8px 0px 5px 75px;
   list-style: none;
 }
-.drawer-item:hover,.drawer-li-sub:hover {
+.drawer-item:hover,
+.drawer-li-sub:hover {
   background-color: var(--v-primary-lighten4);
 }
 /* .drawer-ul-main a:hover{
   background-color: var(--v-primary-lighten4);
 } */
-.drawer-item-icon{
-  position:absolute;
-  left:18px;
-  top:6px;
+.drawer-item-icon {
+  position: absolute;
+  left: 18px;
+  top: 6px;
 }
 .drawer-ul-main .router-link-exact-active,
-.drawer-ul-main .router-link-exact-active i{
-color: var(--v-accent-darken2) !important;
-
+.drawer-ul-main .router-link-exact-active i {
+  color: var(--v-accent-darken2) !important;
 }
 .drawer-ul-main .router-link-exact-active .drawer-li .drawer-item,
-.drawer-ul-main .router-link-exact-active .drawer-li-sub{
+.drawer-ul-main .router-link-exact-active .drawer-li-sub {
   font-weight: 500;
-
 }
-
 </style>
